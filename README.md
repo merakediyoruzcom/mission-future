@@ -7,7 +7,6 @@
 Projede harici bağımlılık veya derleme adımı yoktur. Doğrudan [index.html](index.html) dosyasını tarayıcıda açabilir veya yerel bir sunucu (Service Worker / çevrimdışı önbellek için önerilir) başlatabilirsiniz:
 
 ```powershell
-cd "C:\Users\Çatalca And.L. (4)\.gemini\antigravity\scratch\mission-future"
 py -m http.server 8080
 ```
 
