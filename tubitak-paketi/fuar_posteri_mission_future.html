@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>TÜBİTAK 4006-B / 2204-A Bilim Fuarı Hazır Poster Taslağı — MISSION: FUTURE</title>
+  <style>
+    @page {
+      size: A3 landscape;
+      margin: 10mm;
+    }
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #0f172a;
+      color: #0f172a;
+    }
+    .no-print {
+      max-width: 1200px;
+      margin: 0 auto 14px auto;
+      background: #1e293b;
+      border: 1px solid #38bdf8;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    .no-print button {
+      background: #0284c7;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .poster {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border: 4px solid #0369a1;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+    }
+    .poster-header {
+      background: linear-gradient(135deg, #0f172a, #0369a1);
+      color: white;
+      padding: 20px 28px;
+      text-align: center;
+      border-bottom: 4px solid #38bdf8;
+    }
+    .poster-header .badge {
+      display: inline-block;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 3px 12px;
+      border-radius: 99px;
+      margin-bottom: 6px;
+    }
+    .poster-header h1 {
+      margin: 4px 0;
+      font-size: 1.48rem;
+      letter-spacing: 0.3px;
+    }
+    .poster-header p {
+      margin: 4px 0 0 0;
+      font-size: 0.92rem;
+      color: #bae6fd;
+    }
+    .poster-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr 1fr;
+      gap: 16px;
+      padding: 18px;
+    }
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .box {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: #ffffff;
+    }
+    .box h3 {
+      margin: 0 0 8px 0;
+      font-size: 0.95rem;
+      color: #ffffff;
+      background: #0369a1;
+      padding: 6px 10px;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+    .box p, .box li {
+      font-size: 0.85rem;
+      line-height: 1.44;
+      margin: 0 0 6px 0;
+    }
+    .box ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .highlight {
+      background: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      padding: 8px 10px;
+      font-size: 0.84rem;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 8px 0;
+    }
+    .mini-stat {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 8px;
+      text-align: center;
+    }
+    .mini-stat strong {
+      display: block;
+      font-size: 1.18rem;
+      color: #0369a1;
+    }
+    .mini-stat span {
+      font-size: 0.74rem;
+      color: #475569;
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .no-print { display: none; }
+      .poster { box-shadow: none; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <div>
+      <strong>💡 İpucu:</strong> Poster üzerindeki tüm metinlere tıklayarak kendi okul adınızı ve sonuçlarınızı doğrudan düzenleyebilirsiniz (<code>contenteditable</code> aktiftir).
+    </div>
+    <button onclick="window.print()">🖨️ Posteri PDF Kaydet / Yazdır</button>
+  </div>
+
+  <div class="poster" contenteditable="true">
+    <div class="poster-header">
+      <div class="badge">TÜBİTAK 4006-B BİLİM FUARI — TASARIM VE ARAŞTIRMA PROJESİ (PSİKOLOJİ / BİLİŞİM)</div>
+      <h1>🚀 MISSION: FUTURE — GÖLGE VERİ (SHADOW DATA) TABANLI OYUNLAŞTIRILMIŞ KARAKTER VE KARİYER ANALİZİ SİMÜLASYONU</h1>
+      <p><strong>Danışman Öğretmen:</strong> [Rehber Öğretmen Adı Soyadı] &nbsp;|&nbsp; <strong>Proje Öğrencileri:</strong> [Öğrenci Adları] &nbsp;|&nbsp; <strong>Okul:</strong> [Okul Adınız]</p>
+    </div>
+
+    <div class="poster-grid">
+      <!-- SOL SÜTUN -->
+      <div class="col">
+        <div class="box">
+          <h3>1. Problem: Optik Formun Sonu</h3>
+          <p>
+            Geleneksel kağıt-kalem rehberlik ve kariyer envanterleri, öğrencinin <strong>kim olduğunu değil, kim olması gerektiğini düşündüğünü</strong> ölçer. Öğrenciler "doğru ve beğenilen cevabı" tahmin ederek işaretler (<em>Sosyal Beğenirlik Yanlılığı</em>).
+          </p>
+          <p>
+            <strong>Amacımız:</strong> Öğrenciye soru sormak yerine onu 2085 yılı Proxima B gezegenindeki <strong>Nova-X Kolonisinin Kaptanı</strong> olarak 12 farklı kriz senaryosunun içine bırakan ve arka planda <strong>gölge verileri (mikro-davranışları)</strong> analiz ederek gerçek karakter ve kariyer profilini çıkaran <em>Mission: Future</em> simülasyonunu tasarlamaktır.
+          </p>
+        </div>
+
+        <div class="box">
+          <h3>2. Gölge Veri (Shadow Data) Motoru</h3>
+          <p>Oyun, ne seçildiğinin yanı sıra karara <strong>nasıl varıldığını</strong> milisaniye düzeyinde kaydeder:</p>
+          <ul>
+            <li><strong>⏱️ Tereddüt Süresi (<code>latencyMs</code>):</strong> Analitik tartma vs. dürtüsel karar.</li>
+            <li><strong>🖱️ Seçenek Gezinmesi (<code>hoverSwitches</code>):</strong> İçsel çatışma ve kararsızlık.</li>
+            <li><strong>📖 Brifing & Kılavuz Okuma (<code>manualMs</code>):</strong> Yönerge takibi vs. deneme-yanılma (<em>Gun 5 Reaktör Arızası</em>).</li>
+            <li><strong>↩️ Geri Alma (<code>undo</code>):</strong> Hata toleransı ve mükemmeliyetçilik (<em>Gun 70 Güç Kesintisi</em>).</li>
+            <li><strong>☄️ Stres Altı Tepki:</strong> 12 sn canlı geri sayımda soğukkanlılık (<em>Gun 30 Meteor Yağmuru</em>).</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>3. Teknik Mimari ve KVKK Uyumu</h3>
+          <ul>
+            <li><strong>Çevrimdışı Öncelikli (Offline-First PWA):</strong> İnternet gerektirmeden her akıllı tahta ve bilgisayarda çalışır.</li>
+            <li><strong>Tam Anonimlik:</strong> İsim veya T.C. No sorulmaz; <code>NX-4821</code> gibi rastgele rumuzlarla çalışır.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ORTA SÜTUN -->
+      <div class="col">
+        <div class="box">
+          <h3>4. Pilot Uygulama Bulguları (Klasik Test vs. Gölge Veri)</h3>
+          <div class="stat-row">
+            <div class="mini-stat">
+              <strong style="color:#d97706;">%78 vs %38</strong>
+              <span>Kağıt Beyanı vs. Gerçek Kılavuz Okuma</span>
+            </div>
+            <div class="mini-stat">
+              <strong style="color:#16a34a;">%87,5 Doğruluk</strong>
+              <span>Öğrenci-Rehber Öğretmen Profil Onayı</span>
+            </div>
+            <div class="mini-stat">
+              <strong style="color:#0284c7;">6 Boyut & 7 Arketip</strong>
+              <span>Dinamik SVG Radar + RIASEC Kodu</span>
+            </div>
+            <div class="mini-stat">
+              <strong style="color:#7c3aed;">4,72 / 5,0 Puan</strong>
+              <span>Oyunlaştırılmış Test Memnuniyeti</span>
+            </div>
+          </div>
+
+          <p style="margin-top:8px;"><strong>Klasik Öz-Bildirim ile Mission: Future Gölge Verisi Karşılaştırması (N=40):</strong></p>
+          <table style="width:100%; border-collapse:collapse; font-size:0.79rem; margin-top:4px;" border="1" bordercolor="#cbd5e1" cellpadding="5">
+            <tr style="background:#f1f5f9; font-weight:bold;">
+              <td>Ölçülen Davranış Boyutu</td>
+              <td align="center">Klasik Kağıt Testi ("Evet Yaparım")</td>
+              <td align="center">Mission: Future Gölge Veri Gerçeği</td>
+              <td align="center">Sosyal Beğenirlik Farkı</td>
+            </tr>
+            <tr>
+              <td>Yönerge ve Kılavuz Okuma</td>
+              <td align="center">%78,0</td>
+              <td align="center" style="color:#dc2626; font-weight:bold;">%38,0 (Gerçek Okuyan)</td>
+              <td align="center" style="font-weight:bold;">%40 Yanlılık Farkı</td>
+            </tr>
+            <tr>
+              <td>Süre Baskısında Soğukkanlı Karar</td>
+              <td align="center">%82,0</td>
+              <td align="center" style="color:#0369a1; font-weight:bold;">%54,0 (Soğukkanlı)</td>
+              <td align="center" style="font-weight:bold;">%28 Yanlılık Farkı</td>
+            </tr>
+            <tr>
+              <td>Karar Öncesi Ekibe Danışma</td>
+              <td align="center">%85,0</td>
+              <td align="center" style="color:#0f766e; font-weight:bold;">%49,0 (Danışan)</td>
+              <td align="center" style="font-weight:bold;">%36 Yanlılık Farkı</td>
+            </tr>
+          </table>
+
+          <div class="highlight">
+            <strong>Temel Bulgu:</strong> Kağıt üzerinde kendisini "planlı ve kılavuz okuyan" olarak işaretleyen öğrencilerin %62'sinin, <em>Gün 5 Reaktör Arızası</em> krizinde kılavuzu hiç açmadan doğrudan kablolarla deneme-yanılma yaptığı gölge veri motoruyla kanıtlanmıştır.
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>5. Hesaplanan 7 Koloni Arketipi ve RIASEC Köprüsü</h3>
+          <ul>
+            <li><strong>♟️ Stratejist (IRC):</strong> Yapay Zekâ Sistem Mimarı, Veri Bilimcisi</li>
+            <li><strong>🌱 Sürdürülebilir (CRS):</strong> Yenilenebilir Enerji & Döngüsel Ekonomi Mimarı</li>
+            <li><strong>⚡ Hızlı Aksiyoncu (REA):</strong> Otonom Filo Lideri, Acil Kriz Koordinatörü</li>
+            <li><strong>🤝 Bağ Kurucu (SEA):</strong> Psikolojik Danışman, İnsan-YZ Etkileşim Tasarımcısı</li>
+            <li><strong>🛡️ Koruyucu (CSI) | 🔭 Kâşif (IRA) | 🎯 Mükemmeliyetçi (CIR)</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SAĞ SÜTUN -->
+      <div class="col">
+        <div class="box">
+          <h3>6. Öğretmen Paneli: "İki Ekran, İki Gerçeklik"</h3>
+          <p>
+            Öğrenci ekranda 100 günlük uzay kolonisini kurtarmaya çalışırken; Rehber Öğretmen kendi panelinde (<code>teacher.html</code>) öğrencinin:
+          </p>
+          <ul>
+            <li><strong>6 Boyutlu SVG Radar Grafiğini</strong> (Analitik, Risk, Sosyal, Sürdürülebilir, Esneklik, Stres),</li>
+            <li><strong>3 Harfli Holland (RIASEC) Kodunu</strong> ve klasik + geleceğin meslek eşleşmelerini,</li>
+            <li><strong>Yumuşak Dikkat Bayraklarını</strong> (yüksek kaygı, aşırı geri alma, pes etme) ve bireysel görüşme sorularını görür.</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>7. Sonuç ve Yaygınlaştırma</h3>
+          <ul>
+            <li><strong>Etik İlke:</strong> Sistem tanı koymaz ve etiketlemez; rehber öğretmenin bireysel görüşmesini zenginleştiren davranışsal bir "pusula" sunar.</li>
+            <li><strong>Maliyet & Erişilebilirlik:</strong> Kurulum gerektirmeyen açık web mimarisi sayesinde Türkiye'deki tüm okullarda sıfır ek donanım maliyetiyle kullanılabilir.</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>8. Kaynakça</h3>
+          <p style="font-size:0.74rem; color:#475569;">
+            • Shute, V. J. (2011). Stealth assessment in computer-based games to support learning. <em>Computer Games and Instruction</em>.<br>
+            • Holland, J. L. (1997). <em>Making Vocational Choices (RIASEC)</em>.<br>
+            • Paulhus, D. L. (1991). Measurement and control of response bias (Social Desirability).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

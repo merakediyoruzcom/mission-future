@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mission: Future — TÜBİTAK Yazdırılabilir Geçerlik Formu, KVKK Veli Onam ve Arketip Kartları</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #0f172a;
+      color: #0f172a;
+      font-size: 10pt;
+      line-height: 1.38;
+    }
+    .no-print-bar {
+      max-width: 210mm;
+      margin: 0 auto 16px auto;
+      background: #1e293b;
+      border: 1px solid #38bdf8;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .no-print-bar a, .no-print-bar button {
+      background: #0284c7;
+      color: white;
+      text-decoration: none;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 9.5pt;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 20px auto;
+      background: white;
+      padding: 13mm;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      page-break-after: always;
+    }
+    .header-box {
+      border-bottom: 3px solid #0284c7;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .header-box h2 {
+      margin: 0;
+      font-size: 12.5pt;
+      color: #0369a1;
+      text-transform: uppercase;
+    }
+    .header-box p {
+      margin: 4px 0 0 0;
+      font-size: 9pt;
+      color: #475569;
+    }
+    .section-title {
+      background: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      padding: 5px 10px;
+      font-weight: 700;
+      font-size: 9.8pt;
+      margin: 9px 0 7px 0;
+      color: #0369a1;
+    }
+    table.scale-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+      margin-top: 4px;
+    }
+    table.scale-table th, table.scale-table td {
+      border: 1px solid #94a3b8;
+      padding: 5px 7px;
+    }
+    table.scale-table th {
+      background: #f8fafc;
+      text-align: center;
+      font-weight: 700;
+    }
+    table.scale-table td.center {
+      text-align: center;
+      width: 30px;
+    }
+    .consent-slip {
+      border: 2px dashed #64748b;
+      padding: 14px;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      font-size: 9.5pt;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .arch-card {
+      border: 2px dashed #0284c7;
+      border-radius: 8px;
+      padding: 10px;
+      background: #f8fafc;
+    }
+    .arch-card h4 {
+      margin: 0 0 4px 0;
+      color: #0369a1;
+      font-size: 10pt;
+      border-bottom: 1px solid #bae6fd;
+      padding-bottom: 3px;
+    }
+    .arch-card p {
+      margin: 0 0 4px 0;
+      font-size: 8.5pt;
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .no-print-bar { display: none; }
+      .page { width: 100%; min-height: auto; margin: 0; padding: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print-bar">
+    <div>
+      <strong>🚀 MISSION: FUTURE — TÜBİTAK Baskı Paketi:</strong> Sayfa 1: Klasik Test vs. Oyun Karşılaştırma Formu | Sayfa 2: KVKK Veli Onam | Sayfa 3: 7 Arketip Stand Kartları
+    </div>
+    <div style="display:flex; gap:8px;">
+      <a href="../index.html" target="_blank">🎮 Oyunu Aç</a>
+      <a href="../teacher.html" target="_blank">👩‍🏫 Öğretmen Paneli (PIN: 2085)</a>
+      <button onclick="window.print()">🖨️ Yazdır / PDF Kaydet (Ctrl+P)</button>
+    </div>
+  </div>
+
+  <!-- SAYFA 1: ÖĞRENCİ KARŞILAŞTIRMA VE GEÇERLİK FORMU -->
+  <div class="page">
+    <div class="header-box">
+      <h2>🚀 MISSION: FUTURE — PİLOT UYGULAMA VE GEÇERLİK DEĞERLENDİRME FORMU</h2>
+      <p>Klasik Öz-Bildirim Envanteri ile Gölge Veri Tabanlı Simülasyon Analizinin Karşılaştırılması (TÜBİTAK Projesi)</p>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; background:#f0f9ff; border:1px solid #bae6fd; padding:7px 12px; border-radius:6px; font-size:9.2pt; margin-bottom:8px;">
+      <span><strong>Oyun Rumuzunuz (Anonim Kod):</strong> NX - ................</span>
+      <span><strong>Sınıfınız:</strong> ..........</span>
+      <span><strong>Cinsiyet:</strong> [ ] Kız &nbsp; [ ] Erkek</span>
+    </div>
+
+    <div class="section-title">AŞAMA 1 (OYUN ÖNCESİ): KLASİK ÖZ-BİLDİRİM (KENDİNİZİ NASIL TANIMLARSINIZ?)</div>
+    <p style="font-size:8.5pt; margin:0 0 4px 0;">
+      <em>Oyuna başlamadan önce aşağıdaki ifadeleri kendi düşüncenize göre (1: Hiç Katılmıyorum ... 5: Tamamen Katılıyorum) işaretleyiniz:</em>
+    </p>
+    <table class="scale-table">
+      <thead>
+        <tr>
+          <th style="width:26px;">No</th>
+          <th style="width:110px;">Ölçülen Boyut</th>
+          <th style="text-align:left;">Klasik Kağıt-Kalem Öz-Bildirim İfadesi</th>
+          <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="center">1</td>
+          <td><strong>Yönerge & Analitik</strong></td>
+          <td>Yeni bir araca veya göreve başlarken kılavuzları ve yönergeleri sonuna kadar dikkatle okurum.</td>
+          <td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td>
+        </tr>
+        <tr>
+          <td class="center">2</td>
+          <td><strong>Stres Performansı</strong></td>
+          <td>Süre baskısı olan acil bir kriz anında panik yapmadan hızlı ve doğru karar verebilirim.</td>
+          <td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td>
+        </tr>
+        <tr>
+          <td class="center">3</td>
+          <td><strong>Sosyal Danışma</strong></td>
+          <td>Zor bir karar alırken tek başıma hareket etmek yerine ekip arkadaşlarıma danışırım.</td>
+          <td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td>
+        </tr>
+        <tr>
+          <td class="center">4</td>
+          <td><strong>Kaynak Yönetimi</strong></td>
+          <td>Elimdeki kaynakları anlık harcamak yerine gelecekteki riskler için tasarruflu kullanırım.</td>
+          <td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td>
+        </tr>
+        <tr>
+          <td class="center">5</td>
+          <td><strong>Hata Toleransı</strong></td>
+          <td>Bir hata yaptığımda veya başarısız olduğumda pes etmeden hemen yeniden denerim.</td>
+          <td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-title">AŞAMA 2 (OYUN SONRASI): MISSION: FUTURE GÖLGE VERİ SONUÇ KAYDI</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:9pt; margin-bottom:8px;">
+      <div style="border:1px solid #cbd5e1; padding:7px 10px; border-radius:4px;">
+        <strong>1. Oyunda Çıkan Birincil Karakter Arketipiniz:</strong><br>
+        [ ] ♟️ Stratejist &nbsp; [ ] 🌱 Sürdürülebilir &nbsp; [ ] ⚡ Hızlı Aksiyoncu<br>
+        [ ] 🤝 Bağ Kurucu &nbsp; [ ] 🛡️ Koruyucu &nbsp; [ ] 🔭 Kâşif &nbsp; [ ] 🎯 Mükemmeliyetçi
+      </div>
+      <div style="border:1px solid #cbd5e1; padding:7px 10px; border-radius:4px;">
+        <strong>2. Oyunun Hesapladığı 3 Harfli Holland (RIASEC) Kodunuz:</strong><br>
+        Kod: [ .... ] [ .... ] [ .... ] &nbsp; <em>(Örn: IRA, SEC, RIE)</em><br>
+        <strong>Koloni Unvanınız:</strong> ........................................................
+      </div>
+    </div>
+
+    <div class="section-title">AŞAMA 3: KULLANICI DENEYİMİ VE PROFİL DOĞRULUĞU DEĞERLENDİRMESİ</div>
+    <table class="scale-table">
+      <thead>
+        <tr>
+          <th style="width:26px;">No</th>
+          <th style="text-align:left;">Oyun Sonrası Değerlendirme İfadeleri</th>
+          <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="center">6</td>
+          <td>Mission: Future simülasyonunu oynamak, klasik çoktan seçmeli test çözmekten çok daha ilgi çekiciydi.</td>
+          <td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td>
+        </tr>
+        <tr>
+          <td class="center">7</td>
+          <td>Oyundaki kriz anlarında (Reaktör Arızası, Meteor Yağmuru vb.) "olması gerekeni" değil, içimden gelen gerçek tepkiyi verdim.</td>
+          <td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td>
+        </tr>
+        <tr>
+          <td class="center">8</td>
+          <td>Oyun sonunda çıkan Karakter Arketipi ve güçlü/gelişime açık yönlerim beni doğru tanımlıyor.</td>
+          <td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td>
+        </tr>
+        <tr>
+          <td class="center">9</td>
+          <td>Oyunun önerdiği "Geleneksel ve Geleceğin Meslekleri" eşleşmesi kariyer hedeflerime yeni bir bakış açısı kazandırdı.</td>
+          <td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td>
+        </tr>
+        <tr>
+          <td class="center">10</td>
+          <td>Okullardaki rehberlik envanterlerinin bu şekilde oyunlaştırılmış simülasyonlarla yapılmasını tercih ederim.</td>
+          <td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td><td class="center">○</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:8px; border:1px solid #94a3b8; padding:6px 10px; font-size:8.3pt; background:#f8fafc; display:flex; justify-content:space-between;">
+      <span><strong>Öğretmen Paneli Gölge Veri Kaydı (Proje Ekibi Doldurur):</strong></span>
+      <span>Ort. Tereddüt: ....... sn</span>
+      <span>Brifing Atlama: [ ] Evet [ ] Hayır</span>
+      <span>Reaktör Yöntemi: [ ] Kılavuz [ ] Deneme [ ] Delege</span>
+      <span>Geri Alma (Undo): .....</span>
+    </div>
+  </div>
+
+  <!-- SAYFA 2: KVKK UYUMLU VELİ ONAM FORMU (2 ADET KESİLEBİLİR) -->
+  <div class="page">
+    <div class="consent-slip">
+      <div class="header-box">
+        <h2>VELİ İZİN (ONAM) VE KVKK AYDINLATMA FORMU</h2>
+        <p>TÜBİTAK Projesi — "Mission: Future" Oyunlaştırılmış Karakter ve Kariyer Analizi Simülasyonu</p>
+      </div>
+      <p><strong>Sayın Veli,</strong></p>
+      <p>
+        Okulumuz Rehberlik ve Psikolojik Danışmanlık Servisi danışmanlığında yürütülen TÜBİTAK projesi kapsamında, öğrencilerimizin karar verme stillerini ve kariyer eğilimlerini yenilikçi bir yöntemle keşfetmeleri amacıyla geliştirilen <strong>"Mission: Future (2085 Koloni Simülasyonu)"</strong> adlı eğitsel web oyununun pilot uygulaması yapılacaktır.
+      </p>
+      <ul>
+        <li><strong>Tam Anonimlik (KVKK Güvencesi):</strong> Sisteme öğrenci adı, soyadı veya T.C. kimlik numarası girilmez; yalnızca rastgele üretilen anonim bir rumuz (Örn: <code>NX-4821</code>) kullanılır.</li>
+        <li><strong>Veri Güvenliği:</strong> Oyun internetsiz (çevrimdışı) çalışır; kamera, mikrofon veya konum verisi kesinlikle kullanılmaz.</li>
+        <li><strong>Eğitsel Amaç:</strong> Elde edilen bulgular yalnızca öğrencinin kariyer farkındalığını desteklemek ve bilimsel proje istatistiklerinde toplu olarak kullanılmak üzere değerlendirilecektir.</li>
+      </ul>
+      <p>
+        Velisi bulunduğum <strong>................</strong> sınıfı öğrencisi <strong>............................................................</strong>'nın bu pilot uygulamaya katılmasına:
+      </p>
+      <p style="font-weight: bold; margin: 10px 0;">
+        [ &nbsp; ] İzin veriyorum. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [ &nbsp; ] İzin vermiyorum.
+      </p>
+      <div style="display: flex; justify-content: space-between; margin-top: 12px;">
+        <span><strong>Tarih:</strong> .... / .... / 202..</span>
+        <span><strong>Veli Adı-Soyadı ve İmzası:</strong> ....................................................</span>
+      </div>
+    </div>
+
+    <div style="text-align: center; color: #94a3b8; font-size: 9pt; margin: 12px 0;">✂️ ------------------------------------------------ KESME ÇİZGİSİ ------------------------------------------------ ✂️</div>
+
+    <div class="consent-slip">
+      <div class="header-box">
+        <h2>VELİ İZİN (ONAM) VE KVKK AYDINLATMA FORMU</h2>
+        <p>TÜBİTAK Projesi — "Mission: Future" Oyunlaştırılmış Karakter ve Kariyer Analizi Simülasyonu</p>
+      </div>
+      <p><strong>Sayın Veli,</strong></p>
+      <p>
+        Okulumuz Rehberlik ve Psikolojik Danışmanlık Servisi danışmanlığında yürütülen TÜBİTAK projesi kapsamında, öğrencilerimizin karar verme stillerini ve kariyer eğilimlerini yenilikçi bir yöntemle keşfetmeleri amacıyla geliştirilen <strong>"Mission: Future (2085 Koloni Simülasyonu)"</strong> adlı eğitsel web oyununun pilot uygulaması yapılacaktır.
+      </p>
+      <ul>
+        <li><strong>Tam Anonimlik (KVKK Güvencesi):</strong> Sisteme öğrenci adı, soyadı veya T.C. kimlik numarası girilmez; yalnızca rastgele üretilen anonim bir rumuz (Örn: <code>NX-4821</code>) kullanılır.</li>
+        <li><strong>Veri Güvenliği:</strong> Oyun internetsiz (çevrimdışı) çalışır; kamera, mikrofon veya konum verisi kesinlikle kullanılmaz.</li>
+        <li><strong>Eğitsel Amaç:</strong> Elde edilen bulgular yalnızca öğrencinin kariyer farkındalığını desteklemek ve bilimsel proje istatistiklerinde toplu olarak kullanılmak üzere değerlendirilecektir.</li>
+      </ul>
+      <p>
+        Velisi bulunduğum <strong>................</strong> sınıfı öğrencisi <strong>............................................................</strong>'nın bu pilot uygulamaya katılmasına:
+      </p>
+      <p style="font-weight: bold; margin: 10px 0;">
+        [ &nbsp; ] İzin veriyorum. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [ &nbsp; ] İzin vermiyorum.
+      </p>
+      <div style="display: flex; justify-content: space-between; margin-top: 12px;">
+        <span><strong>Tarih:</strong> .... / .... / 202..</span>
+        <span><strong>Veli Adı-Soyadı ve İmzası:</strong> ....................................................</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAYFA 3: FUAR STANDI BAS-KES "7 KOLONİ ARKETİPİ & GELECEĞİN MESLEKLERİ HATIRA KARTLARI" -->
+  <div class="page">
+    <div class="header-box">
+      <h2>🌌 MISSION: FUTURE — BAS-KES 7 KOLONİ ARKETİPİ VE KARİYER KÖPRÜSÜ KARTLARI</h2>
+      <p>Fuar standında oyunu deneyimleyen ziyaretçilere çıkan arketiplerine göre hediye edilecek kariyer pusulası kartları</p>
+    </div>
+
+    <div class="cards-grid">
+      <div class="arch-card">
+        <h4>♟️ 1. STRATEJİST — Baş Sistem ve Strateji Mimarı</h4>
+        <p><strong>Davranış İmzan:</strong> Karar vermeden önce veri toplar, kılavuzları inceler ve uzun vadeli plan yaparsın.</p>
+        <p><strong>🏛️ Klasik Meslekler:</strong> Sistem & Yazılım Mimarı, Veri Bilimcisi, Endüstri Mühendisi</p>
+        <p><strong>🚀 Geleceğin Meslekleri:</strong> Yapay Zekâ Sistem Mimarı, Akıllı Şehir Planlayıcısı, Kuantum Algoritma Tasarımcısı</p>
+      </div>
+
+      <div class="arch-card">
+        <h4>🌱 2. SÜRDÜRÜLEBİLİR — Ekosistem Yöneticisi</h4>
+        <p><strong>Davranış İmzan:</strong> Kaynakları korur, bugünden çok yarını düşünür; biriktirme ve dengeyi öncelersin.</p>
+        <p><strong>🏛️ Klasik Meslekler:</strong> Çevre & İklim Mühendisi, Biyosistem Uzmanı, Ekonomist</p>
+        <p><strong>🚀 Geleceğin Meslekleri:</strong> Yenilenebilir Enerji Tasarımcısı, Döngüsel Ekonomi Mimarı, Astro-Ekoloji Uzmanı</p>
+      </div>
+
+      <div class="arch-card">
+        <h4>⚡ 3. HIZLI AKSİYONCU — Saha Operasyon Kaptanı</h4>
+        <p><strong>Davranış İmzan:</strong> Kriz anında tereddüt etmeden harekete geçer, pratiğe odaklanır ve deneyerek öğrenirsin.</p>
+        <p><strong>🏛️ Klasik Meslekler:</strong> Acil Tıp / Kriz Uzmanı, Saha Mühendisi, Girişimci, Pilot</p>
+        <p><strong>🚀 Geleceğin Meslekleri:</strong> Otonom Filo & Dron Operasyon Lideri, Afet Teknolojileri Saha Koordinatörü</p>
+      </div>
+
+      <div class="arch-card">
+        <h4>🤝 4. BAĞ KURUCU — Diplomasi ve İletişim Elçisi</h4>
+        <p><strong>Davranış İmzan:</strong> Mürettebatı dinler, ortak kararı ve ekip moralini her zaman en üstte tutarsın.</p>
+        <p><strong>🏛️ Klasik Meslekler:</strong> Psikolojik Danışman / Psikolog, Diplomat, Eğitimci, İK Lideri</p>
+        <p><strong>🚀 Geleceğin Meslekleri:</strong> İnsan–Yapay Zekâ Etkileşim Tasarımcısı, Organizasyonel Refah Mimarı</p>
+      </div>
+
+      <div class="arch-card">
+        <h4>🛡️ 5. KORUYUCU — Koloni Güvenlik ve Kalkan Komutanı</h4>
+        <p><strong>Davranış İmzan:</strong> Tehlikeleri önceden sezer, kritik sistemleri ve insan hayatını güvenceye alırsın.</p>
+        <p><strong>🏛️ Klasik Meslekler:</strong> Siber Güvenlik Uzmanı, Risk & Denetim Analisti, Hukukçu</p>
+        <p><strong>🚀 Geleceğin Meslekleri:</strong> Kritik Altyapı Savunma Mimarı, Yapay Zekâ Etik ve Güvenlik Denetçisi</p>
+      </div>
+
+      <div class="arch-card">
+        <h4>🔭 6. KÂŞİF — Öncü Keşif ve Araştırma Lideri</h4>
+        <p><strong>Davranış İmzan:</strong> Bilinmeyenden korkmak yerine merakla üstüne gider, bilimsel keşif için hesaplı risk alırsın.</p>
+        <p><strong>🏛️ Klasik Meslekler:</strong> Ar-Ge Araştırmacısı, Biyoteknoloji & Genetik Uzmanı, İnovasyon Tasarımcısı</p>
+        <p><strong>🚀 Geleceğin Meslekleri:</strong> Astrobiyoloji Araştırmacısı, Yeni Nesil Malzeme & Nanoteknoloji Geliştiricisi</p>
+      </div>
+
+      <div class="arch-card" style="grid-column: span 2;">
+        <h4>🎯 7. MÜKEMMELİYETÇİ — Hassas Sistemler ve Kalite Başdenetçisi</h4>
+        <p><strong>Davranış İmzan:</strong> Detaylara yüksek özen gösterir, hatayı fark ettiğin anda geri alıp düzeltir ve sıfır-hata standardında çalışırsın.</p>
+        <p><strong>🏛️ Klasik Meslekler:</strong> Cerrah / Tıbbi Uzman, Havacılık & Uzay Kalite Mühendisi, Mimar, Aktüer &nbsp;|&nbsp; <strong>🚀 Geleceğin Meslekleri:</strong> Mikro-Robotik & Biyonik Cerrahi Uzmanı, Uzay Aracı Doğrulama Başmühendisi, CRISPR Genetik Kalite Uzmanı</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

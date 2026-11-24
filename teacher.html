@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Öğretmen Paneli · Mission: Future</title>
+  <meta name="theme-color" content="#070b18">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/teacher.css">
+</head>
+<body>
+  <!-- PIN kapısı -->
+  <main id="gate" class="start">
+    <form class="start-card" id="gateForm">
+      <div class="eyebrow">Rehberlik Servisi · Yetkili Erişim</div>
+      <h1 class="title" style="font-size:2rem">Öğretmen <span>Paneli</span></h1>
+      <p class="lead">Öğrenci karakter haritaları yalnızca yetkili rehber öğretmen tarafından görüntülenebilir.</p>
+      <div class="field">
+        <label for="pin">Erişim PIN'i</label>
+        <input id="pin" class="input" type="password" inputmode="numeric" autocomplete="off" maxlength="8" required aria-describedby="pinHint">
+        <p class="hint" id="pinHint">Prototip PIN: <strong>2085</strong>. Gerçek kurulumda kurumsal kimlik doğrulama kullanılır.</p>
+      </div>
+      <div class="start-actions">
+        <button class="btn btn-primary" type="submit">Giriş</button>
+        <a class="btn btn-ghost" href="index.html">← Oyuna dön</a>
+      </div>
+    </form>
+  </main>
+
+  <div id="panel" class="tp" hidden>
+    <header class="tp-head">
+      <div>
+        <div class="eyebrow">Mission: Future · Öğretmen Paneli</div>
+        <h1>Sınıf Karakter Haritası</h1>
+      </div>
+      <div class="tp-actions">
+        <button type="button" class="btn btn-sm" id="demoBtn">Demo sınıfı oluştur</button>
+        <button type="button" class="btn btn-sm" id="exportBtn">Anonim veriyi dışa aktar (JSON)</button>
+        <button type="button" class="btn btn-sm btn-danger" id="clearBtn">Tüm veriyi sil</button>
+        <a class="btn btn-sm btn-ghost" href="index.html">Oyuna dön</a>
+      </div>
+    </header>
+
+    <p class="tp-note">⚠️ Bu profiller <strong>tanı değil, gözlemdir.</strong> Davranış örüntülerinden türetilen içgörüler, rehber öğretmenin profesyonel değerlendirmesini desteklemek içindir. Prototip ağırlıkları henüz geçerlik çalışmasıyla kalibre edilmemiştir.</p>
+
+    <div class="tp-grid">
+      <section class="card tp-list">
+        <h2>Öğrenciler</h2>
+        <div id="students" class="students" role="list"></div>
+        <p id="empty" class="hint" hidden>Henüz veri yok. Bir öğrenci oyunu oynadığında ya da “Demo sınıfı oluştur” ile örnek veri eklediğinde burada görünür.</p>
+      </section>
+
+      <section class="card" id="classView">
+        <h2>Sınıf Isı Haritası</h2>
+        <p class="hint">Her hücre, öğrencinin o boyuttaki konumunu gösterir. Turuncu = sol kutup, turkuaz = sağ kutup. İki kutup da “iyi” ya da “kötü” değildir.</p>
+        <div class="heat-wrap"><table class="heat" id="heat"></table></div>
+        <div id="archDist" class="arch-dist"></div>
+      </section>
+
+      <section class="card tp-detail" id="detail" hidden></section>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/tracker.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/teacher.js"></script>
+</body>
+</html>

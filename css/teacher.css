@@ -1,0 +1,82 @@
+/* Öğretmen paneli */
+body:has(#panel:not([hidden])) { overflow: auto; }
+.tp { max-width: 1320px; margin: 0 auto; padding: 1.2rem; }
+.tp-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; flex-wrap: wrap; margin-bottom: .8rem; }
+.tp-head h1 { margin: 0; font-size: 1.7rem; }
+.tp-actions { display: flex; gap: .45rem; flex-wrap: wrap; }
+.tp-note { font-size: .85rem; color: var(--muted); padding: .6rem .9rem; border: 1px solid #5a4422; background: rgb(255 179 92 / .06); border-radius: 10px; }
+.tp-grid { display: grid; grid-template-columns: 280px 1fr; gap: 1rem; align-items: start; }
+.tp-detail { grid-column: 2; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 1.1rem 1.2rem; }
+.card h2 { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.tp-list { grid-row: span 2; position: sticky; top: 1rem; }
+
+.students { display: grid; gap: .4rem; }
+.stu {
+  font: inherit; color: var(--text); text-align: left; cursor: pointer;
+  display: grid; grid-template-columns: auto 1fr auto; gap: .1rem .6rem; align-items: center;
+  padding: .55rem .7rem; border-radius: 10px; border: 1px solid var(--line); background: var(--bg-2);
+}
+.stu:hover { border-color: var(--accent-2); }
+.stu[aria-current="true"] { border-color: var(--accent); background: #12233a; }
+.stu .ic { grid-row: span 2; font-size: 1.4rem; }
+.stu b { font-family: var(--mono); font-size: .9rem; }
+.stu small { color: var(--muted); font-size: .75rem; grid-column: 2; }
+.stu .st { grid-row: span 2; font-size: .7rem; padding: .1rem .45rem; border-radius: 99px; border: 1px solid var(--line); }
+.st.completed { color: var(--ok); border-color: #2c5a34; } .st.failed { color: var(--danger); border-color: #6b2b37; } .st.active { color: var(--accent-2); }
+
+.heat-wrap { overflow-x: auto; }
+.heat { border-collapse: separate; border-spacing: 3px; width: 100%; font-size: .8rem; }
+.heat th { font-weight: 600; color: var(--muted); text-align: center; padding: .2rem; }
+.heat th small { display: block; font-weight: 400; font-size: .68rem; }
+.heat td { text-align: center; padding: .45rem .3rem; border-radius: 6px; font-variant-numeric: tabular-nums; font-weight: 600; }
+.heat td.code { text-align: left; font-family: var(--mono); background: transparent; cursor: pointer; color: var(--accent); }
+.arch-dist { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+
+.det-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
+.det-head h2 { font-size: 1.4rem; color: var(--text); letter-spacing: 0; text-transform: none; font-family: var(--mono); margin: 0; }
+.keymap { display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; }
+.keymap input { font: inherit; min-height: 34px; padding: .3em .6em; border-radius: 8px; border: 1px solid var(--line); background: var(--bg-2); color: var(--text); }
+.det-grid { display: grid; grid-template-columns: minmax(260px, 340px) 1fr; gap: 1.2rem; }
+.arch-card { padding: 1rem; border-radius: 14px; background: linear-gradient(135deg, rgb(94 226 200 / .12), rgb(122 167 255 / .08)); border: 1px solid #2c4f6a; margin-bottom: 1rem; }
+.arch-card .big { font-size: 1.5rem; font-weight: 700; }
+.arch-card .sec { color: var(--muted); font-size: .85rem; }
+.dim { display: grid; gap: .25rem; margin-bottom: .7rem; }
+.dim-top { display: flex; justify-content: space-between; font-size: .78rem; color: var(--muted); }
+.dim-top b { color: var(--text); font-size: .85rem; }
+.dim-track { position: relative; height: 10px; border-radius: 6px; background: linear-gradient(90deg, #ffb35c55, #26325a 50%, #5ee2c855); }
+.dim-track i { position: absolute; top: -3px; width: 4px; height: 16px; border-radius: 2px; background: var(--text); transform: translateX(-50%); box-shadow: 0 0 0 2px var(--panel); }
+.flags { display: grid; gap: .4rem; margin: 0; padding: 0; list-style: none; }
+.flags li { padding: .5rem .7rem; border-radius: 10px; font-size: .85rem; border-left: 3px solid var(--accent-2); background: var(--bg-2); }
+.flags li.watch { border-color: var(--warn); } .flags li.positive { border-color: var(--ok); }
+.metrics { width: 100%; border-collapse: collapse; font-size: .84rem; }
+.metrics td { padding: .4rem .3rem; border-bottom: 1px solid var(--line); }
+.metrics td:last-child { text-align: right; font-family: var(--mono); }
+.metrics td small { display: block; color: var(--muted); font-size: .74rem; }
+.timeline { width: 100%; border-collapse: collapse; font-size: .82rem; }
+.timeline th, .timeline td { padding: .4rem .35rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.timeline th { color: var(--muted); font-weight: 600; }
+.timeline .tg { font-family: var(--mono); font-size: .72rem; color: var(--muted); }
+.sec-title { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 1.2rem 0 .5rem; }
+.qs { margin: 0; padding-left: 1.1rem; font-size: .9rem; }
+.radar-svg { width: 100%; max-width: 340px; display: block; margin: 0 auto; }
+.legend { display: flex; justify-content: center; gap: 1rem; font-size: .75rem; color: var(--muted); margin-top: .3rem; }
+.mini-chart { width: 100%; height: 120px; display: block; }
+.heatmap-svg { width: 100%; max-width: 340px; display: block; margin: 0 auto; }
+
+/* GDD Bölüm 4 Öğretmen Özet Kartı */
+.gdd-summary-card {
+  display: grid; gap: .45rem; padding: 1rem 1.2rem; margin-bottom: 1.2rem;
+  border-radius: 14px; background: linear-gradient(135deg, rgb(94 226 200 / .11), rgb(122 167 255 / .08));
+  border: 1px solid #2e5375; font-size: .92rem;
+}
+.gdd-row { display: flex; gap: .5rem; flex-wrap: wrap; align-items: baseline; }
+.gdd-row > span:first-child { min-width: 170px; color: var(--muted); font-weight: 600; }
+.gdd-rec { margin-top: .3rem; padding-top: .55rem; border-top: 1px dashed #355678; color: var(--accent); }
+
+@media (max-width: 960px) {
+  .tp-grid { grid-template-columns: 1fr; }
+  .tp-detail { grid-column: auto; }
+  .tp-list { position: static; grid-row: auto; }
+  .det-grid { grid-template-columns: 1fr; }
+}

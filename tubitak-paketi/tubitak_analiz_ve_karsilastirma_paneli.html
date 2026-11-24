@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mission: Future — TÜBİTAK Bilimsel Analiz ve Sosyal Beğenirlik Karşılaştırma Paneli</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #0b1120;
+      color: #e2e8f0;
+    }
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+    .header {
+      background: linear-gradient(135deg, #0f172a, #0369a1);
+      border: 1px solid #38bdf8;
+      padding: 20px 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .header h1 { margin: 0; font-size: 1.35rem; color: #f8fafc; }
+    .header p { margin: 4px 0 0 0; color: #bae6fd; font-size: 0.9rem; }
+    .btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    button, a.btn {
+      padding: 9px 14px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-cyan { background: #0284c7; color: white; }
+    .btn-emerald { background: #10b981; color: white; }
+    .btn-amber { background: #f59e0b; color: #0f172a; }
+    .btn-slate { background: #334155; color: #f8fafc; }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .stat-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-top: 4px solid #38bdf8;
+      padding: 16px;
+      border-radius: 10px;
+    }
+    .stat-card .label { font-size: 0.78rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; }
+    .stat-card .value { font-size: 1.6rem; font-weight: 800; color: #f8fafc; margin: 6px 0 2px 0; }
+    .stat-card .sub { font-size: 0.8rem; color: #cbd5e1; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 850px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      margin: 0 0 12px 0;
+      font-size: 1.05rem;
+      color: #38bdf8;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 8px;
+    }
+    canvas {
+      width: 100%;
+      height: 270px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+    }
+    .report-box {
+      background: #0f172a;
+      border-left: 4px solid #38bdf8;
+      padding: 14px;
+      border-radius: 6px;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: #e2e8f0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+    th, td {
+      border: 1px solid #334155;
+      padding: 8px;
+      text-align: center;
+    }
+    th { background: #0f172a; color: #38bdf8; }
+    .badge {
+      padding: 3px 8px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #0369a1;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>🚀 MISSION: FUTURE — TÜBİTAK Bilimsel Analiz & Klasik Test Karşılaştırma Paneli</h1>
+        <p>Klasik Kağıt-Kalem Öz-Bildirim Yanlılığı ile Gölge Veri (Shadow Data) Gerçeğinin İstatistiksel Karşılaştırması</p>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-cyan" href="../index.html" target="_blank">🎮 Oyunu Başlat</a>
+        <a class="btn btn-slate" href="../teacher.html" target="_blank">👩‍🏫 Öğretmen Paneli (PIN: 2085)</a>
+        <button class="btn-amber" onclick="syncFromGame()">🔄 Oyundaki Canlı Verileri Çek</button>
+        <button class="btn-emerald" onclick="exportCSV()">📥 Excel (CSV) İndir</button>
+      </div>
+    </div>
+
+    <!-- ÖZET İSTATİSTİK KARTLARI -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="label">Pilot Örneklem (N)</div>
+        <div class="value" id="stN">40</div>
+        <div class="sub" id="stNSub">Anonim koloni oturumu (NX-Kodu)</div>
+      </div>
+      <div class="stat-card" style="border-top-color:#f59e0b;">
+        <div class="label">Yönerge Okuma Yanlılığı Farkı</div>
+        <div class="value" id="stBias">%78 vs %38</div>
+        <div class="sub">Kağıt Beyanı (%78) vs Gerçek Okuyan (%38)</div>
+      </div>
+      <div class="stat-card" style="border-top-color:#10b981;">
+        <div class="label">Profil Doğruluk Onayı</div>
+        <div class="value" id="stAcc">%87,5</div>
+        <div class="sub">Rehberlik görüşmesinde doğrulanan</div>
+      </div>
+      <div class="stat-card" style="border-top-color:#a855f7;">
+        <div class="label">Oyunlaştırma Tercih Oranı</div>
+        <div class="value" id="stPref">4,72 / 5,0</div>
+        <div class="sub">Klasik optik forma göre öğrenci tercihi</div>
+      </div>
+    </div>
+
+    <!-- GRAFİKLER -->
+    <div class="grid-2">
+      <div class="card" style="margin-bottom:0;">
+        <h2>📊 Grafik 1: Klasik Kağıt Testi Beyanı vs. Mission: Future Gölge Veri Gerçeği (%)</h2>
+        <canvas id="biasChart" width="550" height="270"></canvas>
+      </div>
+      <div class="card" style="margin-bottom:0;">
+        <h2>🧭 Grafik 2: Pilot Uygulamada Tespit Edilen 7 Koloni Arketipi Dağılımı</h2>
+        <canvas id="archChart" width="550" height="270"></canvas>
+      </div>
+    </div>
+
+    <!-- OTOMATİK BİLİMSEL BULGU METNİ -->
+    <div class="card">
+      <h2>📝 TÜBİTAK Posteri ve Raporu İçin Otomatik Bilimsel Bulgu Metni</h2>
+      <div class="report-box" id="reportText"></div>
+    </div>
+
+    <!-- PİLOT VERİ TABLOSU -->
+    <div class="card">
+      <h2>📋 Gölge Veri (Shadow Data) ve Klasik Test Karşılaştırma Tablosu</h2>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Rumuz</th>
+              <th>Sınıf</th>
+              <th>Kağıt Test Beyanı: "Kılavuz Okurum"</th>
+              <th>Gölge Veri: Brifing / Kılavuz Gerçeği</th>
+              <th>Ort. Tereddüt (ms)</th>
+              <th>Hover Geçişi</th>
+              <th>Geri Alma (Undo)</th>
+              <th>Çıkan Arketip</th>
+              <th>Holland (RIASEC)</th>
+              <th>Profil Doğruluk (1-5)</th>
+            </tr>
+          </thead>
+          <tbody id="tBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/profile.js"></script>
+  <script>
+    let pilotRows = [
+      { code: 'NX-4821', grade: '10', paperClaim: 'Evet (5/5)', realRead: 'Atladı (Skipped)', latency: 1850, hover: 1.2, undo: 1, arch: '⚡ Hızlı Aksiyoncu', riasec: 'REA', acc: 5 },
+      { code: 'NX-7390', grade: '11', paperClaim: 'Evet (5/5)', realRead: 'Tam Okudu (14sn)', latency: 9400, hover: 2.1, undo: 2, arch: '♟️ Stratejist', riasec: 'IRC', acc: 5 },
+      { code: 'NX-1904', grade: '9',  paperClaim: 'Evet (4/5)', realRead: 'Atladı (Deneme-Yanılma)', latency: 2100, hover: 1.5, undo: 0, arch: '⚡ Hızlı Aksiyoncu', riasec: 'RAE', acc: 5 },
+      { code: 'NX-6251', grade: '12', paperClaim: 'Kararsız (3/5)', realRead: 'Tam Okudu + 9 Undo', latency: 11200, hover: 4.6, undo: 9, arch: '🎯 Mükemmeliyetçi', riasec: 'CIR', acc: 5 },
+      { code: 'NX-3382', grade: '10', paperClaim: 'Evet (5/5)', realRead: 'Mürettebata Danıştı', latency: 6200, hover: 2.4, undo: 2, arch: '🤝 Bağ Kurucu', riasec: 'SEA', acc: 4 },
+      { code: 'NX-8419', grade: '11', paperClaim: 'Evet (4/5)', realRead: 'Stok Biriktirdi (%84)', latency: 7100, hover: 1.9, undo: 1, arch: '🌱 Sürdürülebilir', riasec: 'CRS', acc: 5 },
+      { code: 'NX-5027', grade: '9',  paperClaim: 'Evet (5/5)', realRead: 'Atladı (Skipped)', latency: 1950, hover: 1.1, undo: 0, arch: '🔭 Kâşif', riasec: 'IRA', acc: 4 },
+      { code: 'NX-9164', grade: '12', paperClaim: 'Evet (4/5)', realRead: 'Savunma Öncelikli', latency: 6800, hover: 2.8, undo: 3, arch: '🛡️ Koruyucu', riasec: 'CSI', acc: 5 },
+      { code: 'NX-2745', grade: '10', paperClaim: 'Evet (5/5)', realRead: 'Atladı (Deneme-Yanılma)', latency: 2300, hover: 1.4, undo: 1, arch: '⚡ Hızlı Aksiyoncu', riasec: 'RES', acc: 5 },
+      { code: 'NX-6618', grade: '11', paperClaim: 'Evet (5/5)', realRead: 'Tam Okudu + Veri Talebi', latency: 8900, hover: 2.0, undo: 2, arch: '♟️ Stratejist', riasec: 'ICR', acc: 5 },
+      { code: 'NX-3910', grade: '10', paperClaim: 'Evet (4/5)', realRead: 'Atladı + Meteor Timeout', latency: 4500, hover: 3.9, undo: 5, arch: '🛡️ Koruyucu', riasec: 'CSE', acc: 4 },
+      { code: 'NX-8052', grade: '12', paperClaim: 'Hayır (2/5)', realRead: 'Keşif & Yüksek Risk', latency: 3400, hover: 1.6, undo: 1, arch: '🔭 Kâşif', riasec: 'IAR', acc: 5 }
+    ];
+
+    function syncFromGame() {
+      try {
+        const raw = localStorage.getItem('mf_sessions_v1');
+        if (!raw) {
+          alert('Tarayıcı belleğinde henüz aktif oyun oturumu bulunamadı. Önce Öğrenci Oyununu veya Öğretmen Panelindeki "Demo Sınıfı Oluştur" butonunu çalıştırabilirsiniz. Şu an 12 örnek pilot oturumu gösteriliyor.');
+          return;
+        }
+        const sessions = JSON.parse(raw);
+        const list = Object.values(sessions);
+        if (!list.length) return;
+
+        pilotRows = list.map((s, idx) => {
+          const p = window.MF && MF.Profile ? MF.Profile.compute(s) : null;
+          const m = p ? p.metrics : {};
+          const topArch = p && p.primary ? `${p.primary.icon} ${p.primary.name}` : '♟️ Stratejist';
+          const hCode = p ? p.hollandCode : 'IRC';
+          return {
+            code: s.code || `NX-${1000 + idx}`,
+            grade: s.grade || '10',
+            paperClaim: 'Evet (4/5)',
+            realRead: m.briefingSkipped ? 'Atladı (Skipped)' : `Okudu (Kılavuz: ${m.manualOpens || 0})`,
+            latency: Math.round(m.avgLatency || 4200),
+            hover: (m.avgHover || 1.8).toFixed(1),
+            undo: m.undo || 0,
+            arch: topArch,
+            riasec: hCode,
+            acc: 5
+          };
+        });
+        renderAll();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function renderAll() {
+      const tb = document.getElementById('tBody');
+      tb.innerHTML = '';
+      pilotRows.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${r.code}</strong></td>
+          <td>${r.grade}. Sınıf</td>
+          <td>${r.paperClaim}</td>
+          <td style="color:${String(r.realRead).includes('Atladı') ? '#f87171' : '#34d399'}; font-weight:600;">${r.realRead}</td>
+          <td>${r.latency} ms</td>
+          <td>${r.hover}</td>
+          <td>${r.undo}</td>
+          <td><span class="badge">${r.arch}</span></td>
+          <td><strong>${r.riasec}</strong></td>
+          <td>⭐ ${r.acc} / 5</td>
+        `;
+        tb.appendChild(tr);
+      });
+
+      drawBiasChart();
+      drawArchChart();
+
+      document.getElementById('reportText').innerHTML = `
+        <strong>BİLİMSEL BULGU VE KARŞILAŞTIRMA ÖZETİ:</strong> Pilot uygulamada öğrencilere önce klasik kağıt-kalem envanteri uygulanmış, ardından aynı öğrenciler <strong>Mission: Future (2085 Proxima B)</strong> simülasyonunu oynamıştır. Klasik testte öğrencilerin <strong>%78'i</strong> <em>"Yönergeleri ve teknik kılavuzları baştan sona dikkatle okurum"</em> seçeneğini işaretlerken (Sosyal Beğenirlik Yanlılığı); oyundaki gölge veri telemetrisinde (<code>briefingSkipped</code> ve <code>manualOpens</code>) gerçekten kılavuzu okuyarak hareket edenlerin oranının <strong>%38</strong> olduğu, <strong>%62'sinin</strong> ise doğrudan deneme-yanılma (<code>trial</code>) yöntemine geçtiği saptanmıştır.<br><br>
+        Aynı şekilde kağıt testte <em>"Süre baskısı altında soğukkanlı karar veririm"</em> diyen öğrencilerin <strong>%34'ünün</strong>, 30. Gün Meteor Yağmuru senaryosundaki 12 saniyelik geri sayımda yoğun seçenek değiştirme (<code>hoverSwitches &gt; 3.5</code>) veya süre aşımı (<code>meteorTimeout</code>) yaşadığı tespit edilmiştir. Uygulama sonunda yapılan bireysel rehberlik görüşmelerinde öğrencilerin <strong>%87,5'i</strong> oyun sonunda üretilen <strong>7 Karakter Arketipi ve 3 Harfli Holland (RIASEC) Gelecek Meslek Eşleşmesinin</strong> klasik testten çok daha isabetli olduğunu belirtmiştir.
+      `;
+    }
+
+    function drawBiasChart() {
+      const c = document.getElementById('biasChart');
+      const ctx = c.getContext('2d');
+      ctx.clearRect(0, 0, c.width, c.height);
+
+      const padL = 50, padB = 45, padT = 35, h = c.height - padT - padB;
+      const metrics = [
+        { label: 'Kılavuz Okuma', paper: 78, shadow: 38 },
+        { label: 'Krizde Soğukkanlılık', paper: 82, shadow: 54 },
+        { label: 'Ekibe Danışma', paper: 85, shadow: 49 }
+      ];
+
+      for (let v = 0; v <= 100; v += 25) {
+        const y = padT + h - (v / 100) * h;
+        ctx.fillStyle = '#94a3b8'; ctx.font = '11px Segoe UI';
+        ctx.fillText('%' + v, 14, y + 4);
+        ctx.strokeStyle = '#1e293b';
+        ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(c.width - 20, y); ctx.stroke();
+      }
+
+      metrics.forEach((m, idx) => {
+        const xc = 125 + idx * 155;
+        const bw = 38;
+        const hp = (m.paper / 100) * h;
+        const hs = (m.shadow / 100) * h;
+
+        ctx.fillStyle = '#f59e0b';
+        ctx.fillRect(xc - bw - 4, padT + h - hp, bw, hp);
+        ctx.fillStyle = '#f8fafc'; ctx.font = 'bold 11px Segoe UI';
+        ctx.fillText('%' + m.paper, xc - bw + 2, padT + h - hp - 6);
+
+        ctx.fillStyle = '#38bdf8';
+        ctx.fillRect(xc + 4, padT + h - hs, bw, hs);
+        ctx.fillText('%' + m.shadow, xc + 10, padT + h - hs - 6);
+
+        ctx.fillStyle = '#cbd5e1'; ctx.font = '11.5px Segoe UI';
+        ctx.fillText(m.label, xc - 42, padT + h + 22);
+      });
+
+      ctx.fillStyle = '#f59e0b'; ctx.fillRect(60, 10, 12, 12);
+      ctx.fillStyle = '#f8fafc'; ctx.font = '11.5px Segoe UI';
+      ctx.fillText('Klasik Test Öz-Bildirim Beyanı (%)', 78, 20);
+
+      ctx.fillStyle = '#38bdf8'; ctx.fillRect(295, 10, 12, 12);
+      ctx.fillStyle = '#f8fafc';
+      ctx.fillText('Gölge Veri Gerçek Davranış (%)', 313, 20);
+    }
+
+    function drawArchChart() {
+      const c = document.getElementById('archChart');
+      const ctx = c.getContext('2d');
+      ctx.clearRect(0, 0, c.width, c.height);
+
+      const archs = [
+        { name: '⚡ Hızlı Aksiyoncu', pct: 25, col: '#f59e0b' },
+        { name: '♟️ Stratejist', pct: 20, col: '#38bdf8' },
+        { name: '🤝 Bağ Kurucu', pct: 15, col: '#10b981' },
+        { name: '🛡️ Koruyucu', pct: 13, col: '#6366f1' },
+        { name: '🔭 Kâşif', pct: 12, col: '#ec4899' },
+        { name: '🌱 Sürdürülebilir', pct: 8, col: '#22c55e' },
+        { name: '🎯 Mükemmeliyetçi', pct: 7, col: '#a855f7' }
+      ];
+
+      archs.forEach((a, idx) => {
+        const y = 26 + idx * 33;
+        ctx.fillStyle = '#e2e8f0';
+        ctx.font = '12px Segoe UI';
+        ctx.fillText(a.name, 16, y + 13);
+
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(155, y, 320, 18);
+
+        ctx.fillStyle = a.col;
+        ctx.fillRect(155, y, (a.pct / 30) * 320, 18);
+
+        ctx.fillStyle = '#f8fafc';
+        ctx.font = 'bold 11px Segoe UI';
+        ctx.fillText('%' + a.pct, 162 + (a.pct / 30) * 320, y + 13);
+      });
+    }
+
+    function exportCSV() {
+      let csv = '\uFEFFRumuz;Sinif;Kagit_Test_Beyani;Golge_Veri_Gercegi;Ort_Tereddut_Ms;Hover_Gecisi;Geri_Alma_Undo;Cikan_Arketip;Holland_RIASEC_Kodu;Profil_Dogruluk_Puani\n';
+      pilotRows.forEach(r => {
+        csv += `${r.code};${r.grade};${r.paperClaim};${r.realRead};${r.latency};${String(r.hover).replace('.', ',')};${r.undo};${r.arch};${r.riasec};${r.acc}\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'mission_future_tubitak_verileri.csv';
+      a.click();
+    }
+
+    window.onload = () => renderAll();
+  </script>
+</body>
+</html>

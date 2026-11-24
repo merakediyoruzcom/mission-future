@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Çatalca Anadolu Lisesi — TÜBİTAK 4006-B Tüm Alt Projeler Kitapçığı (Kılavuz Formatında)</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm;
+    }
+    * {
+      box-sizing: border-box;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f3e8ff;
+      color: #000;
+      font-size: 11.2pt;
+      line-height: 1.38;
+    }
+    .no-print {
+      max-width: 210mm;
+      margin: 0 auto 16px auto;
+      background: #4c1d95;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 10pt;
+      gap: 10px;
+    }
+    .no-print button {
+      background: #f59e0b;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 24px auto;
+      background: white;
+      padding: 14mm;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    table.tubitak-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px solid #581c87;
+    }
+    table.tubitak-table td {
+      border: 1.5px solid #581c87;
+      padding: 8.5px 12px;
+      vertical-align: middle;
+      text-align: justify;
+    }
+    table.tubitak-table td.label-col {
+      width: 25%;
+      font-weight: bold;
+      text-align: left;
+      text-transform: uppercase;
+      background: #faf5ff;
+    }
+    .page-num {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 10.5pt;
+      font-weight: bold;
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .no-print { display: none; }
+      .page { width: 100%; min-height: auto; margin: 0; padding: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <div>
+      <strong>🏫 ÇATALCA ANADOLU LİSESİ TÜBİTAK 4006-B PROJE KİTAPÇIĞI (15 PROJE):</strong> Tüm tablolar resmi TÜBİTAK kılavuzu formatındadır. Üzerine tıklayarak düzenleyebilir ve <code>Ctrl+P</code> ile PDF kitapçık olarak kaydedebilirsiniz.
+    </div>
+    <button onclick="window.print()">🖨️ Tümünü Yazdır / PDF Kaydet</button>
+  </div>
+
+  <div id="pagesContainer" contenteditable="true"></div>
+
+  <script>
+    const projects = [
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: '[Rehber Öğretmen Adı Soyadı]',
+        type: 'Tasarım',
+        field: 'Yazılım / Psikoloji',
+        theme: 'STEAM (Fen, Teknoloji, Mühendislik, Sanat ve Matematik)',
+        title: 'Gelecek Görevi (Mission Future): Gölge Veri Tabanlı Oyunlaştırılmış Karakter ve STEAM Kariyer Analizi Simülasyonu',
+        aim: 'Geleneksel kağıt-kalem kariyer envanterlerinde öğrenciler doğru ve beğenilen cevabı tahmin ederek işaretlediği için sosyal beğenirlik yanlılığı oluşmaktadır. Projemizin amacı, öğrencilerin kriz anındaki mikro-davranışlarını (gölge veri) analiz ederek problem çözme stillerini, karakter arketiplerini ve STEAM kariyer yönelimlerini belirleyen oyunlaştırılmış bir web simülasyonu ve öğretmen analiz paneli tasarlamaktır.',
+        method: '<strong>Problemi araştırma:</strong> Projemize başlamadan önce okullarda kullanılan klasik mesleki yönelim envanterlerinin sınırlılıklarını ve örtük değerlendirme (stealth assessment) çalışmalarını araştıracağız. <strong>Gereksinimleri belirleme:</strong> Okullardaki akıllı tahta ve bilgisayarlarda kurulum ve internet gerektirmeden (çevrimdışı) çalışabilecek, KVKK uyumlu anonim bir web simülasyonu gereksinimlerini belirleyeceğiz. <strong>Olası çözümleri geliştirme:</strong> Fen (ekosistem dengesi), teknoloji (veri analitiği), mühendislik (reaktör devre tamiri), sanat (arayüz ve hikâye kurgusu) ve matematik (kaynak optimizasyonu ve olasılık) disiplinlerini içeren senaryo alternatifleri geliştirilecektir. <strong>En iyi çözümü seçme:</strong> Öğrencinin sadece hangi şıkkı seçtiğini değil, karara nasıl vardığını (tereddüt süresi, seçenekler arası gezinme, teknik kılavuz okuma süresi ve geri alma sayısı) ölçen 100 günlük "Proxima B Koloni Simülasyonu" kurgusuna karar verilecektir. <strong>Prototip oluşturma/yapılandırma:</strong> HTML5, CSS ve JavaScript kullanılarak öğrenci oyun ekranı ve rehber öğretmen için 6 boyutlu SVG radar grafiği, 7 karakter arketipi ve 3 harfli Holland (RIASEC) meslek eşleştirmesi üreten öğretmen paneli kodlanacaktır. <strong>Çözümleri test etme ve değerlendirme:</strong> Hazırladığımız prototipi okulumuzdaki 40 gönüllü öğrenciyle test ederek klasik kağıt-kalem testi sonuçlarıyla karşılaştıracağız ve ölçümlerin doğruluğunu değerlendireceğiz.',
+        result: 'Bir web simülasyonu üzerinde gerçekleştirilecek tasarımımız sayesinde öğrenciler sıkıcı optik formlar doldurmak yerine bir uzay kolonisini yönetirken gerçek karar verme, stres yönetimi ve analitik düşünme becerilerini sergileyecektir. Klasik testlerde gizlenen sabırsızlık, deneme-yanılma eğilimi veya mükemmeliyetçilik gibi davranış örüntüleri gölge veri motoruyla objektif biçimde tespit edilecektir. Düşük donanımlı cihazlarda ve internetsiz ortamlarda dahi çalışabilen bu özgün yazılımın okul rehberlik servislerinde kullanılarak öğrencilerin 21. yüzyıl STEAM ve geleceğin mesleklerine yönelik kariyer farkındalıklarını artırması hedeflenmektedir.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: 'Hale YALÇINDAĞ',
+        type: 'Araştırma',
+        field: 'Türk Dili ve Edebiyatı',
+        theme: 'Dil ve Edebiyat',
+        title: 'Sultanü’ş-Şuara (Padişah Şairlerimiz): Divan Şiirinde Hükümdar Şairlerin Mahlas, Tema ve Üslup Özelliklerinin İncelenmesi',
+        aim: 'Osmanlı padişahlarının siyasi ve askeri kimliklerinin yanı sıra "Avnî, Muhibbî, Adlî, Bahtî" gibi mahlaslarla divan edebiyatına kazandırdıkları edebi eserlerin dil, üslup ve mazmun zenginliğini ortaya çıkarmak; öğrencilerin klasik Türk edebiyatı metinlerine yönelik ilgi ve estetik algılarını artırmak amaçlanmıştır.',
+        method: 'Projenin ilk aşamasında Osmanlı döneminde şiir yazan ve divan sahibi olan padişahlar (Fatih Sultan Mehmet, II. Bayezid, Yavuz Sultan Selim, Kanuni Sultan Süleyman, I. Ahmed vb.) üzerine Ulusal Tez Merkezi, yazma eser katalogları ve akademik makalelerden alanyazın taraması yapılacaktır. İkinci aşamada seçilen 10 padişah şairin kullandıkları mahlasların anlam dünyası, şiirlerinde öne çıkan temalar (adalet, aşk, hikmet, vatan, tevazu) ve edebi sanatlar içerik analizi yöntemiyle sınıflandırılacaktır. Üçüncü aşamada günümüz öğrencilerinin bu beyitleri ne ölçüde anlayabildiğini görmek amacıyla 50 öğrenciye "Klasik Şiir Algı Formu" uygulanacaktır. Son aşamada ise incelenen beyitler günümüz Türkçesiyle açıklamalı kartlara ve Web 2.0 aracı (Artsteps / Canva) ile dijital bir "Padişah Şairler Sanal Sergisi"ne dönüştürülerek fuar alanında ziyaretçilere sunulacaktır.',
+        result: 'Araştırma sonucunda padişahların kullandıkları mahlasların ve şiir temalarının dönemin tarihsel ruhunu ve devlet felsefesini nasıl yansıttığı somut örneklerle ortaya konulacaktır. Öğrencilerin divan şiirini "anlaşılmaz ve soyut" görme önyargıları kırılarak kültürel ve edebi mirasımıza yönelik farkındalıkları artırılacaktır. Hazırlanan görsel beyit kartları ve dijital sanal sergi materyali, edebiyat derslerinde kalıcı bir öğretim materyali olarak kullanılabilecektir.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: 'Melek SAVAŞ',
+        type: 'Tasarım',
+        field: 'Türk Dili ve Edebiyatı / İletişim',
+        theme: 'Dil ve Edebiyat',
+        title: 'Sessiz Mikrofon: Türk İşaret Dili (TİD) Destekli Engelsiz Okul Haberleri Bülteni ve Görsel Sözlük Tasarımı',
+        aim: 'İşitme engelli bireylerin toplumsal iletişimde karşılaştıkları dil engellerine dikkat çekmek ve okulumuzda kapsayıcı iletişim kültürü oluşturmak amacıyla, okul haberlerinin Türk İşaret Dili (TİD) ile sunulduğu "Sessiz Mikrofon" video-bülten formatı ve karekod destekli görsel işaret dili iletişim kartları tasarlamaktır.',
+        method: '<strong>Problemi araştırma:</strong> İşitme engelli bireylerin bilgiye erişimde yaşadıkları zorluklar ve okullarda Türk İşaret Dili (TİD) farkındalık düzeyi araştırılacaktır. <strong>Gereksinimleri belirleme:</strong> Okul içinde en sık kullanılan günlük iletişim ifadeleri ve okul haber bülteni metinleri için temel işaret dili kelime havuzu belirlenecektir. <strong>Olası çözümleri geliştirme:</strong> Yazılı afiş, basılı el kitabı veya karekodlu video haber stüdyosu seçenekleri değerlendirilecektir. <strong>En iyi çözümü seçme:</strong> Hem görsel hem de hareketli öğrenmeyi sağladığı için okul haberlerinin öğrenciler tarafından işaret diliyle sunulduğu "Sessiz Mikrofon Dijital Haber Bülteni" ve karekodlu iletişim kartları tasarımına karar verilecektir. <strong>Prototip oluşturma/yapılandırma:</strong> Proje öğrencileri MEB Türk İşaret Dili Sözlüğü’nden yararlanarak eğitim alacak, okul etkinliklerini içeren 5 bölümlük işaret dili haber videosu çekecek ve koridorlar için karekodlu "Konuşan Eller İletişim Panosu" hazırlayacaktır. <strong>Çözümleri test etme ve değerlendirme:</strong> Hazırlanan bülten ve kartlar okulumuzdaki öğrencilere izletilerek temel işaret dili kavramlarını öğrenme oranları ön test ve son test ile değerlendirilecektir.',
+        result: 'Tasarlanan "Sessiz Mikrofon" haber bülteni ve karekodlu iletişim kartları sayesinde okulumuz öğrencilerinin Türk İşaret Dili’ni bir iletişim ve kültür dili olarak tanımaları, günlük yaşamda temel işaret dili selamlaşma ve ifade kalıplarını öğrenmeleri sağlanacaktır. Engelsiz iletişim ve empati bilinci artırılarak okulumuzda kapsayıcı bir dil farkındalığı oluşturulacaktır.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: 'Melek SAVAŞ<br>Ufuk SAVAŞ',
+        type: 'Tasarım',
+        field: 'Yabancı Dil (İngilizce)',
+        theme: 'Okul Dışı Öğrenme Ortamları',
+        title: 'Geleceğin Konuşmacıları (Future Talkers): Yabancı Dil Konuşma Kaygısını Azaltan Okul Dışı Sosyal Konuşma İstasyonu Tasarımı',
+        aim: 'Lise öğrencileri yabancı dil dilbilgisi kurallarını bilmelerine rağmen sınıf ortamında hata yapma korkusu nedeniyle konuşma kaygısı (speaking anxiety) yaşamaktadır. Projemizin amacı, öğrencilerin sınıf dışı sosyal alanlarda (okul bahçesi, kütüphane, kantin) doğal senaryolarla İngilizce pratik yapmalarını sağlayan "Future Talkers Konuşma İstasyonu ve Rol Kartları" tasarlamaktır.',
+        method: '<strong>Problemi araştırma:</strong> Yabancı dil eğitiminde konuşma tutukluğunun ve hata yapma kaygısının nedenleri araştırılacaktır. <strong>Gereksinimleri belirleme:</strong> Öğrencilerin not kaygısı olmadan, akranlarıyla oyunlaştırılmış şekilde konuşabileceği sınıf dışı öğrenme materyali gereksinimleri belirlenecektir. <strong>Olası çözümleri geliştirme:</strong> Günlük yaşam, seyahat, gelecek meslekleri ve kültür temalı diyalog çarkları ile senaryo kartları geliştirilecektir. <strong>En iyi çözümü seçme:</strong> Okul bahçesi ve sosyal alanlarda kurulacak taşınabilir "Future Talkers İstasyonu", 3 farklı zorluk seviyesinde 60 adet "Kriz ve Diyalog Görev Kartı" ve "1 Dakika Kesintisiz Konuşma Kum Saati" tasarımına karar verilecektir. <strong>Prototip oluşturma/yapılandırma:</strong> Kartlar ve istasyon materyalleri görsel olarak tasarlanıp basılacak, telaffuz desteği için kartlara sesli karekodlar eklenecektir. <strong>Çözümleri test etme ve değerlendirme:</strong> Gönüllü 30 öğrenciyle 3 hafta boyunca öğle aralarında okul dışı konuşma istasyonunda uygulama yapılacak; uygulama öncesi ve sonrasında "Yabancı Dil Konuşma Kaygısı Ölçeği" uygulanarak tasarımın etkisi test edilecektir.',
+        result: 'Tasarlanan okul dışı konuşma istasyonu ve senaryo kartları sayesinde öğrencilerin İngilizceyi bir ders zorunluluğu olmaktan çıkarıp doğal bir iletişim aracı olarak deneyimlemeleri beklenmektedir. Üç haftalık uygulama sonunda öğrencilerin yabancı dil konuşma kaygılarının azalması, kelime hatırlama hızlarının ve öz-güvenlerinin anlamlı düzeyde artması hedeflenmektedir.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: 'Mustafa TURAN',
+        type: 'Araştırma',
+        field: 'Psikoloji / Bilişsel Bilimler',
+        theme: 'STEAM (Fen, Teknoloji, Mühendislik, Sanat ve Matematik)',
+        title: 'Dikkatin Sesi ve Görünmeyen Yüz: Farklı Frekanstaki İşitsel Uyaranların Seçici Dikkat ve Görsel Algı (İstemsiz Körlük) Üzerindeki Etkisi',
+        aim: 'İnsan beyni aynı anda gelen çoklu görsel ve işitsel uyaranları işlerken bazı ayrıntıları fark edememekte (istemsiz körlük / inattentional blindness) ve dikkat bölünmesi yaşamaktadır. Bu araştırmada, farklı ses ortamlarının (sessizlik, beyaz gürültü, sözlü müzik ve çevresel gürültü) öğrencilerin görsel dikkat performansları ve gizli görsel öğeleri ("görünmeyen yüz/nesne") fark etme süreleri üzerindeki etkisini incelemek amaçlanmıştır.',
+        method: 'Projede "İşitsel uyaranların türü ve frekansı, görsel seçici dikkati ve istemsiz körlük oranını nasıl etkiler?" sorusu üzerinden hareket edildi. Araştırmada deneysel araştırma modeli kullanılacaktır. Çalışma grubunu okulumuzdan rastgele seçilen 60 gönüllü öğrenci oluşturacaktır. Öğrenciler 15’er kişilik 4 gruba ayrılacaktır: 1. Grup (Kontrol - Tam Sessizlik), 2. Grup (Enstrümantal / Klasik Frekans), 3. Grup (Sözlü Pop/Rap Müzik), 4. Grup (Yüksek Desibel Okul/Trafik Gürültüsü). Tüm gruplara bilgisayar ekranında içerisinde gizli görsel örüntüler ("görünmeyen yüz") ve sayma görevleri barındıran standart bir görsel dikkat testi uygulanacaktır. Deneyin bağımsız değişkeni işitsel ortam türü, bağımlı değişkeni ise doğru odaklanma puanı ve gizli görseli fark etme süresidir (saniye). Elde edilen veriler kaydedilerek gruplar arası ortalamalar karşılaştırılacak ve grafiklerle raporlaştırılacaktır.',
+        result: 'Deney sonucunda, sözlü müzik ve düzensiz yüksek gürültü ortamında bulunan öğrencilerin görsel odaklanma görevlerinde hata oranlarının artması ve ekrandaki "görünmeyen yüz/ayrıntı" öğesini fark etme oranlarının (seçici dikkatlerinin) anlamlı düzeyde düşmesi beklenmektedir. Buna karşın sessiz veya dengeli enstrümantal ortamda bilişsel odaklanmanın en yüksek düzeyde çıkacağı öngörülmektedir. Araştırma bulgularıyla öğrencilerin ders çalışırken işitsel dikkat dağıtıcıları yönetmelerine yönelik bilimsel bir farkındalık rehberi oluşturulacaktır.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: 'Nigar KILINÇER',
+        type: 'Araştırma',
+        field: 'Biyoloji / Coğrafya',
+        theme: 'Çevre ve Çevreyi Koruma',
+        title: 'Su Ayak İzi Farkındalığı: Görünmeyen Suya Bilimsel Bakış ve Okulumuzun Dolaylı Su Tüketim Profilinin İncelenmesi',
+        aim: 'Günlük yaşamda yalnızca musluktan akan "doğrudan su tüketimi" fark edilmekte, ancak tükettiğimiz gıdaların, kıyafetlerin ve endüstriyel ürünlerin üretim sürecinde harcanan tonlarca "görünmeyen (dolaylı/sanal) su" göz ardı edilmektedir. Bu araştırmada okulumuz öğrencilerinin birincil ve ikincil (görünmeyen) su ayak izi miktarlarını hesaplamak ve su tasarrufu farkındalığını artırmak amaçlanmıştır.',
+        method: 'Projede "Öğrencilerin günlük tüketim alışkanlıklarından kaynaklanan görünmeyen su ayak izi miktarı nedir ve farkındalık eğitimi bu tüketimi nasıl değiştirir?" sorusundan hareket edildi. Araştırma nicel tarama ve karşılaştırma yöntemiyle yürütülecektir. Çalışma grubunu okulumuzdaki 100 öğrenci oluşturacaktır. İlk aşamada uluslararası Su Ayak İzi Ağı (Water Footprint Network) katsayıları kullanılarak öğrencilerin beslenme, giyim ve günlük kullanım alışkanlıklarını içeren "Su Ayak İzi Hesaplama Anketi" uygulanacaktır. Bir elmanın (70 L), bir pamuklu tişörtün (2700 L), bir bardak çayın (30 L) ve bir hamburgerin (2400 L) görünmeyen su maliyeti üzerinden okulun ortalama su ayak izi (m³/yıl) hesaplanacaktır. İkinci aşamada sonuçlar görsel infografiklere ve somut su bidonu modellerine dönüştürülerek öğrencilere sunulacak, farkındalık öncesi ve sonrası tutum puanları analiz edilecektir.',
+        result: 'Araştırma sonucunda öğrencilerin toplam su ayak izinin %80’inden fazlasının musluk suyundan değil, gıda israfı ve hızlı tüketim ürünlerinden kaynaklanan "görünmeyen su" olduğu istatistiksel olarak ortaya konulacaktır. Bilim fuarı standında sergilenecek ürün-su karşılığı modelleri ve dijital su ayak izi hesaplama aracı sayesinde ziyaretçilerin kendi su ayak izlerini öğrenmeleri, gıda ve tekstil israfını azaltarak tatlı su kaynaklarının korunmasına katkıda bulunmaları sağlanacaktır.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: 'Ayşe ÜZER',
+        type: 'Araştırma',
+        field: 'Tarih',
+        theme: 'Okul Dışı Öğrenme Ortamları',
+        title: 'Selçuklu’da Şehir ve Medeniyet: Selçuklu Şehircilik Anlayışının Mekânsal Analizi ve Sanal Müze / Maket Ortamında Modellenmesi',
+        aim: 'Anadolu Selçuklu Devleti’nin şehir planlamasında (külliye, medrese, darüşşifa, kervansaray, bedesten ve su yolları) insan, sosyal adalet ve çevre uyumunu nasıl merkeze aldığını incelemek; tarih derslerindeki soyut şehircilik kavramlarını okul dışı öğrenme ortamı olarak üç boyutlu maket ve sanal müze sergisiyle somutlaştırmak amaçlanmıştır.',
+        method: 'Projenin ilk aşamasında Konya, Sivas, Kayseri ve Erzurum gibi Anadolu Selçuklu merkezlerinin şehir planları, vakfiyeleri ve mimari eserleri üzerine akademik makale ve kaynak taraması yapılacaktır. İkinci aşamada Selçuklu şehirlerindeki sosyal dayanışma kurumlarının (darüşşifalarda müzikle tedavi, kervansaraylarda ücretsiz konaklama, medrese vakıfları) şehir merkezindeki konumlanma mantığı mekânsal analiz yöntemiyle incelenecektir. Üçüncü aşamada elde edilen veriler doğrultusunda ideal bir "Selçuklu Şehir Merkezi Kesiti" ölçekli maket olarak tasarlanacak ve Web 2.0 aracı (Artsteps) kullanılarak 360 derece gezilebilen "Selçuklu Şehir ve Medeniyet Sanal Müzesi" oluşturulacaktır. Fuar öncesinde 40 öğrenciye sanal müze ve maket üzerinden okul dışı öğrenme uygulaması yapılarak tarihsel empati ve kalıcılık düzeyi değerlendirilecektir.',
+        result: 'Araştırma sonucunda Selçuklu şehirciliğinin yalnızca taş yapılardan ibaret olmadığı; engelli, yolcu, hasta ve öğrencileri koruyan bütüncül bir sosyal refah ekosistemi olduğu ortaya konulacaktır. Hazırlanan ölçekli şehir maketi ve sanal müze uygulaması sayesinde öğrencilerin tarihsel mekân algıları gelişecek ve kültürel mirasımızı koruma bilinci güçlenecektir.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: 'Erkan GİRGİN',
+        type: 'Araştırma',
+        field: 'Biyoloji',
+        theme: 'Çevre ve Çevreyi Koruma',
+        title: 'Anoksijenik Fotosentez: Winogradsky Kolonu Düzeneğinde Mor ve Yeşil Kükürt Bakterilerinin Gelişimi ve Çevresel Biyoremediasyon Potansiyelinin İncelenmesi',
+        aim: 'Öğrencilerde genellikle tüm fotosentez olaylarının su kullanılarak oksijen ürettiği yanılgısı bulunmaktadır. Bu araştırmada, su yerine hidrojen sülfür (H2S) kullanarak oksijen üretmeden fotosentez yapan (anoksijenik fotosentez) mor ve yeşil kükürt bakterilerini kendi kendini idame ettiren "Winogradsky Kolonu" ekosisteminde gözlemlemek ve farklı ışık/sülfat koşullarının bakteri gelişimine etkisini incelemek amaçlanmıştır.',
+        method: 'Projede "Işık şiddeti ve kükürt kaynağı miktarı, anoksijenik fotosentetik bakterilerin gelişim hızını nasıl etkiler?" sorusundan hareket edildi. Kontrollü deney yöntemi kullanılacaktır. Gölet dip çamuru, su, selüloz kaynağı (gazete kağıdı), kalsiyum karbonat ve kalsiyum sülfat (yumurta sarısı/alçı) kullanılarak 4 adet şeffaf cam silindirde Winogradsky Kolonu hazırlanacaktır. 1. Kolon (Kontrol - Doğal Gün Işığı), 2. Kolon (Sürekli LED Işık + Yüksek Kükürt), 3. Kolon (Yarı Gölge), 4. Kolon (Tam Karanlık) ortamda 6 hafta boyunca inkübasyona bırakılacaktır. Deneyin bağımsız değişkeni ışık ve kükürt oranı, bağımlı değişkeni ise anaerobik alt katmanda oluşan mor ve yeşil kükürt bakterisi pigment bantlarının kalınlığı (mm) ve oluşum süresidir. Haftalık renk değişimleri ve katman boyları cetvel ve fotoğraflarla kaydedilerek karşılaştırma tabloları oluşturulacaktır.',
+        result: 'Deney sonucunda ışık alan ve sülfatça zengin kolonların oksijensiz alt katmanlarında hidrojen sülfürü (H2S) besin ve enerjiye dönüştüren yeşil ve mor kükürt bakterisi katmanlarının belirgin şekilde oluşması, karanlık kolonda ise fotosentetik pigment bandının oluşmaması beklenmektedir. Böylece hem anoksijenik fotosentez mekanizması somut bir mikro-ekosistem modeliyle kanıtlanacak hem de bu bakterilerin kirli sulardaki toksik hidrojen sülfürü temizlemedeki (biyoremediasyon) çevresel önemi ortaya konulacaktır.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: 'Belgin ÇALLI',
+        type: 'Araştırma',
+        field: 'Türk Dili ve Edebiyatı',
+        theme: 'Dil ve Edebiyat',
+        title: 'Romanın Mekânı, Edebiyatta Şehrin İzleri: Türk Romanında İstanbul ve Çatalca Mekânlarının Etkileşimli Edebiyat Haritasıyla İncelenmesi',
+        aim: 'Edebi eserlerde mekân, yalnızca olayların geçtiği fiziksel bir arka plan değil, kahramanların ruh halini ve toplumsal değişimi yansıtan canlı bir unsurdur. Bu araştırmada Türk edebiyatının seçkin romanlarında İstanbul ve Çatalca çevresindeki tarihsel mekânların nasıl betimlendiğini incelemek ve bu mekânları dijital bir "Etkileşimli Edebiyat Haritası" üzerinde birleştirmek amaçlanmıştır.',
+        method: 'Araştırma nitel araştırma yöntemlerinden doküman incelemesi ve mekânsal içerik analizi ile yürütülecektir. İlk aşamada Tanzimat’tan Cumhuriyet dönemine uzanan süreçte (Ahmet Hamdi Tanpınar, Peyami Safa, Halide Edip Adıvar, Yaşar Kemal ve yerel tarihsel anlatılar) şehir ve kasaba mekânlarını merkeze alan 8 edebi eser seçilecektir. İkinci aşamada bu eserlerde geçen semtler, sokaklar, tren istasyonları ve tarihi yapılar fişleme tekniğiyle çıkarılarak yazarların mekânı hangi duygusal ve toplumsal imgelerle kurguladıkları analiz edilecektir. Üçüncü aşamada seçilen mekânların geçmişteki edebi tasvirleri ile günümüzdeki fotoğrafları karşılaştırılacaktır. Son aşamada Google My Maps / Padlet aracı kullanılarak her noktaya tıklandığında ilgili romandan alıntıların ve görsellerin açıldığı "Yaşayan Edebiyat Haritası" oluşturulacak ve fuar alanında sergilenecektir.',
+        result: 'Araştırma sonucunda öğrencilerin yaşadıkları şehri ve tarihi yapıları edebi eserlerin gözüyle yeniden keşfetmeleri, roman okurken mekân-insan ilişkisini derinlemesine çözümleme becerisi kazanmaları beklenmektedir. Hazırlanan dijital ve basılı Edebiyat Haritası, edebiyat derslerini sınıf duvarlarının dışına taşıyarak şehir kültürü ve okuma alışkanlığına kalıcı bir katkı sunacaktır.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: 'Sinem EKŞİ<br>Hamza GÜLTEKİN',
+        type: 'Araştırma',
+        field: 'Sosyoloji / Psikoloji',
+        theme: 'Okul Dışı Öğrenme Ortamları',
+        title: 'İyikiler ve Keşkeler: Kuşaklararası Yaşam Deneyimlerinin Gençlerin Karar Alma ve Değer Algısı Üzerindeki Etkisinin İncelenmesi',
+        aim: 'Gençlerin eğitim, kariyer, arkadaşlık ve zaman yönetimi konularında geleceğe dönük kararlar alırken yetişkin kuşakların yaşam tecrübelerinden yararlanmaları büyük önem taşımaktadır. Bu araştırmada farklı yaş kuşaklarındaki bireylerin yaşamlarındaki en önemli "İyiki" (memnuniyet) ve "Keşke" (pişmanlık) temalarını belirlemek ve bu sözlü tarih görüşmelerinin lise öğrencilerinin yaşam önceliklerine etkisini incelemek amaçlanmıştır.',
+        method: 'Araştırma nitel araştırma yöntemi ve olgubilim (fenomenoloji) deseni ile yürütülecektir. Çalışma grubunu ilçemizde yaşayan 60 yaş üstü 15 büyük (birinci kuşak), 35-50 yaş arası 15 yetişkin (ikinci kuşak) ve görüşmeleri gerçekleştiren 15 lise öğrencisi oluşturmaktadır. Alan yazın taraması ve rehberlik servisi görüşüyle "Eğitim, meslek, aile/ilişkiler, sağlık ve zaman kullanımı" boyutlarını kapsayan 5 açık uçlu sorudan oluşan yarı yapılandırılmış görüşme formu hazırlanmıştır. Öğrenciler okul dışı öğrenme etkinliği kapsamında gönüllü katılımcılarla yüz yüze görüşmeler gerçekleştirerek yanıtları kayıt altına alacaktır. Toplanan veriler içerik ve tematik analiz yöntemiyle kodlanarak kuşaklara göre en sık tekrar eden "İyiki" ve "Keşke" kategorileri frekans tablolarına dönüştürülecektir.',
+        result: 'Araştırma sonucunda ileri yaş grubundaki bireylerin "Keşke"lerinin büyük çoğunluğunun "yapılan hatalardan değil, zamanında ertelenen eğitim hedeflerinden ve sevdiklerine ayrılmayan zamandan" kaynaklandığının ortaya çıkması beklenmektedir. Bu canlı yaşam öykülerini bizzat dinleyen ve analiz eden öğrencilerde zamanın değeri, empati, kuşaklararası bağ ve bilinçli karar alma farkındalığının gelişeceği öngörülmektedir. Fuar standında kurulacak "İyikiler ve Keşkeler Ağacı" ile ziyaretçilerin de kendi gelecek hedeflerini sorgulamaları sağlanacaktır.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: 'Elçin TAŞKIN GÖK',
+        type: 'Araştırma',
+        field: 'Türk Dili ve Edebiyatı / Sosyoloji',
+        theme: 'Dil ve Edebiyat',
+        title: 'Çağdaş Bir Ozan Olarak Barış Manço Şarkılarındaki Atasözü, Deyim ve Değerler Eğitimi Unsurlarının İncelenmesi',
+        aim: 'Halk kültürümüzün ve Türkçenin söz varlığını modern müzikle gelecek kuşaklara aktaran Barış Manço’nun şarkı sözlerinde yer alan atasözleri, deyimler ve milli-evrensel değerleri tespit etmek; bu eserlerin öğrencilerin dil zenginliği ve değerler eğitimi algısı üzerindeki etkisini incelemek amaçlanmıştır.',
+        method: 'Araştırmada nitel araştırma yöntemlerinden doküman incelemesi ve içerik analizi kullanılacaktır. İlk aşamada Barış Manço’nun 40 şarkı sözü ("Sarı Çizmeli Mehmet Ağa", "Halil İbrahim Sofrası", "Hemşerim Memleket Nire", "Bugün Bayram", "Oku Bakayım" vb.) çalışma evreni olarak seçilecektir. İkinci aşamada bu eserlerde geçen atasözleri ve deyimler TDK Atasözleri ve Deyimler Sözlüğü referans alınarak listelenecek; şarkı sözlerindeki iletiler MEB Kök Değerler (adalet, dostluk, dürüstlük, öz denetim, sabır, saygı, sevgi, sorumluluk, vatanseverlik, yardımseverlik) tablosuna göre sınıflandırılacaktır. Üçüncü aşamada okulumuzdaki 60 öğrenciye şarkılarda geçen deyimlerin anlamlarını içeren bir ön test uygulanacak, ardından karekodlu müzikli hikâye kartlarıyla yapılan etkinlik sonrasında son test uygulanarak deyim öğrenme düzeyindeki artış analiz edilecektir.',
+        result: 'İnceleme ve uygulama sonucunda Barış Manço’nun şarkılarında yüzlerce deyim ve atasözünü bağlamına uygun bir hikâye kurgusuyla kullandığı ve tüm MEB kök değerlerini işlediği somut verilerle gösterilecektir. Müzik eşliğinde sunulan deyim ve atasözlerinin öğrenciler tarafından çok daha hızlı ve kalıcı öğrenildiği kanıtlanacak, fuar standında sesli karekodlu "Barış Manço Söz Varlığı ve Değerler Sözlüğü" sergilenecektir.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: 'Halil KAYA',
+        type: 'Tasarım',
+        field: 'Kimya',
+        theme: 'Çevre ve Çevreyi Koruma',
+        title: 'Sıfır Atık Yaklaşımıyla Evsel Atık Bitkisel Yağlardan Çevre Dostu Doğal Sabun Üretimi ve Kalite Analizi',
+        aim: 'Lavabolara dökülen 1 litre atık bitkisel yağ, yaklaşık 1 milyon litre temiz su kaynağını kirletmekte ve su ekosistemine ağır zarar vermektedir. Bu projede evsel atık yağların su ve toprak kirliliği oluşturmasını önlemek amacıyla aktif karbon ve doğal kil filtrasyonu ile arıtılarak farklı bitkisel uçucu yağ katkılarıyla güvenli, ekonomik ve çevre dostu kalıp sabuna dönüştürülmesi amaçlanmıştır.',
+        method: '<strong>Problemi araştırma:</strong> Evsel atık yağların su kirliliği üzerindeki etkileri ve sabunlaşma (bazik hidroliz) reaksiyon koşulları literatürden araştırılacaktır. <strong>Gereksinimleri belirleme:</strong> Atık yağdaki yanmış partiküllerin ve kokunun giderilmesi için doğal filtrasyon malzemeleri ve doğru sodyum hidroksit (NaOH) stokiyometrik oranı belirlenecektir. <strong>Olası çözümleri geliştirme:</strong> Süzme kağıdı, aktif karbon ve bentonit kili ile yapılan 3 farklı arıtma yöntemi karşılaştırılacaktır. <strong>En iyi çözümü seçme:</strong> En berrak ve kokusuz yağ eldesini sağlayan aktif karbon + çok katmanlı filtre yöntemi ile lavanta, biberiye ve portakal kabuğu esansı katkılı sabun formülasyonu seçilecektir. <strong>Prototip oluşturma/yapılandırma:</strong> Okul kimya laboratuvarında arıtılan yağlar, 45°C’de uygun derişimdeki NaOH çözeltisi ile karıştırılarak kalıplara dökülecek ve 4 haftalık kürlenme sürecine bırakılacaktır. <strong>Çözümleri test etme ve değerlendirme:</strong> Elde edilen sabunların pH değerleri (pH metre/indikatör kağıdı ile 8,5-10 aralığı), köpük yüksekliği ve temizleme kapasitesi standart ticari sabunlarla deneysel olarak karşılaştırılacaktır.',
+        result: 'Laboratuvar testleri sonucunda, aktif karbonla arıtılmış atık yağlardan üretilen doğal sabunların cilt sağlığına uygun pH değerine ve yüksek temizleme kalitesine sahip olduğu kanıtlanacaktır. Okulumuzda başlatılacak "Atık Yağını Getir, Doğal Sabununu Götür" kampanyasıyla yüzlerce litre atık yağın su kaynaklarını kirletmesinin önüne geçilecek ve döngüsel ekonomi bilinci yaygınlaştırılacaktır.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: '[Danışman Öğretmen Adı Soyadı]',
+        type: 'Araştırma',
+        field: 'Coğrafya',
+        theme: 'Küresel Isınma ve İklim Değişikliği',
+        title: 'Buzullar Eridiğinde Çatalca: Küresel İklim Değişikliği Senaryolarının Çatalca Yarımadası Su Kaynakları, Tarım Alanları ve Kıyı Çizgisine Etkisinin Modellenmesi',
+        aim: 'Küresel ısınmaya bağlı buzul erimeleri ve aşırı iklim olayları genellikle uzak coğrafyaların sorunu gibi algılanmaktadır. Bu projede küresel sıcaklık artışı ve deniz seviyesi yükselmesi senaryolarının doğrudan yaşadığımız bölge olan Çatalca’nın kıyı şeridi (Karaburun, Yalıköy), Büyükçekmece-Terkos su havzaları ve tarım arazileri üzerindeki olası etkilerini harita ve kabartma model üzerinde ortaya koymak amaçlanmıştır.',
+        method: 'Projede "Küresel ısınma ve deniz seviyesi yükselmesi senaryoları Çatalca’nın topografyasını, tatlı su havzalarını ve tarımsal ekosistemini nasıl etkileyecektir?" sorusundan hareket edildi. Araştırmada Coğrafi Bilgi Sistemleri (CBS) tabanlı mekânsal analiz ve fiziksel modelleme yöntemi kullanılacaktır. İlk aşamada IPCC (Hükümetlerarası İklim Değişikliği Paneli) raporlarındaki +1 metre, +3 metre ve ekstrem buzul erimesi deniz seviyesi yükselmesi verileri ile Çatalca’nın rakım (eş yükselti) haritaları eşleştirilecektir. İkinci aşamada deniz suyunun Terkos (Durusu) Gölü ve Büyükçekmece Gölü tatlı su rezervlerine karışma (tuzlanma) riski analiz edilecektir. Üçüncü aşamada Çatalca’nın üç boyutlu topografik kabartma maketi hazırlanarak kademeli su yükseltme deneyi yapılacak ve risk altındaki kıyı, tarım ve yerleşim alanları görselleştirilecektir.',
+        result: 'Modelleme sonucunda, küresel iklim değişikliğinin yalnızca kutupları değil; İstanbul’un en önemli tatlı su ve tarım havzası olan Çatalca’nın kıyı ekosistemini ve içme suyu göllerini (tuzlu su girişimi riskiyle) doğrudan tehdit ettiği somut olarak gösterilecektir. Yerel ölçekte hazırlanan bu simülasyon sayesinde öğrencilerde ve bölge halkında iklim değişikliğiyle mücadele ve su havzalarını koruma bilinci güçlü bir şekilde artırılacaktır.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: '[Danışman Öğretmen Adı Soyadı]',
+        type: 'Araştırma',
+        field: 'Biyoloji / Kimya',
+        theme: 'Okul Dışı Öğrenme Ortamları',
+        title: 'ÇAL Gülleri: Okul Bahçesinde Farklı Doğal Toprak Düzenleyicilerle Yetiştirilen Güllerin Gelişimi ve Hidrodistilasyonla Gül Suyu Eldesi',
+        aim: 'Okul bahçesini yaşayan bir biyoloji ve kimya laboratuvarına (okul dışı öğrenme ortamına) dönüştürerek okulumuzun simgesi olan "ÇAL Gülleri"ni kuraklığa dayanıklı doğal toprak karışımlarında yetiştirmek ve hasat edilen gül yapraklarından laboratuvarda su buharı damıtması (hidrodistilasyon) yöntemiyle saf gül suyu (hidrosol) elde etmek amaçlanmıştır.',
+        method: 'Araştırma iki aşamalı deneysel yöntemle yürütülecektir. Birinci aşamada (Biyoloji/Ekoloji) okul bahçesinde belirlenen uygulama alanında 3 deney ve 1 kontrol grubu oluşturulacaktır: 1. Grup (Toprak + %30 Kompost/Solucan Gübresi), 2. Grup (Toprak + %30 Perlit/Pomza - Su Tutucu), 3. Grup (Toprak + %15 Kompost + %15 Perlit), 4. Grup (Kontrol - Sadece Bahçe Toprağı). Gül fidelerinin 6 hafta boyunca sulama sıklığı, toprak nem oranı, sürgün boyu ve tomurcuk sayısı ölçülerek kaydedilecektir. İkinci aşamada (Kimya) açan güllerin taç yaprakları toplanarak okul laboratuvarında Clevenger / basit damıtma düzeneği ile hidrodistilasyon işlemine tabi tutulacak ve elde edilen doğal gül suyunun pH ve fiziksel özellikleri incelenecektir.',
+        result: 'Deney sonucunda organik kompost ve su tutucu mineral (perlit) karışımı uygulanan okul bahçesi parselinde su tüketiminin azaldığı, buna karşın gül gelişiminin ve çiçeklenme sayısının kontrol grubuna göre en yüksek düzeyde olduğu kanıtlanacaktır. Öğrenciler topraktan laboratuvara uzanan üretim sürecini bizzat deneyimleyerek kendi ürettikleri "ÇAL Gül Suyu" numunelerini fuar ziyaretçilerine sunacaktır.'
+      },
+      {
+        students: '[Öğrenci Adı Soyadı 1]<br>[Öğrenci Adı Soyadı 2]',
+        advisor: '[Danışman Öğretmen Adı Soyadı]',
+        type: 'Araştırma',
+        field: 'Biyoloji / Sağlık',
+        theme: 'Çevre ve Çevreyi Koruma',
+        title: 'Nasıl Besleniyorum? Lise Öğrencilerinin Beslenme Alışkanlıklarının Sağlık ve Ekolojik Karbon Ayak İzi Açısından İncelenmesi',
+        aim: 'Paketli ve aşırı işlenmiş gıdaların yoğun tüketimi hem ergenlik dönemindeki öğrencilerin fiziksel-bilişsel sağlığını olumsuz etkilemekte hem de yüksek ambalaj atığı ve üretim emisyonu nedeniyle çevreye zarar vermektedir. Bu araştırmada okulumuz öğrencilerinin günlük beslenme alışkanlıklarını belirlemek ve sağlıklı/yerel beslenme ile ekolojik karbon ayak izi arasındaki ilişkiyi ortaya koymak amaçlanmıştır.',
+        method: 'Araştırmada nicel tarama modeli ve besin içeriği analizi yöntemi kullanılacaktır. Çalışma grubunu okulumuzdaki 100 öğrenci oluşturacaktır. Öğrencilere 7 günlük "Beslenme Günlüğü ve Gıda Tercih Anketi" uygulanarak öğün atlama durumları, su tüketimleri, taze sebze-meyve ve paketli gıda tüketim sıklıkları belirlenecektir. İkinci aşamada kantin ve günlük beslenmede en sık tüketilen 10 paketli gıdanın etiket (içindekiler, ilave şeker, doymuş yağ, katkı maddesi) analizi ile mevsimsel yerel gıdaların karbon ve ambalaj atığı yükü karşılaştırılacaktır. Veriler elektronik tablolama programında analiz edilerek sınıf düzeylerine göre beslenme kalitesi ve çevresel etki grafikleri oluşturulacaktır.',
+        result: 'Araştırma sonucunda öğrencilerin günlük şeker ve paketli gıda tüketim oranlarına dair somut veriler elde edilecek; sağlıklı Akdeniz tipi ve yerel/mevsimsel beslenmenin hem akademik odaklanmayı artırdığı hem de plastik ambalaj atığını ve karbon ayak izini büyük ölçüde azalttığı gösterilecektir. Fuar standında "Tabağımdaki Gizli Şeker ve Atık" modelleri ile "Sürdürülebilir Genç Beslenme Rehberi" sergilenecektir.'
+      }
+    ];
+
+    const container = document.getElementById('pagesContainer');
+    projects.forEach((p, idx) => {
+      const page = document.createElement('div');
+      page.className = 'page';
+      page.innerHTML = `
+        <table class="tubitak-table">
+          <tr><td class="label-col">ÖĞRENCİ</td><td>${p.students}</td></tr>
+          <tr><td class="label-col">DANIŞMAN</td><td>${p.advisor}</td></tr>
+          <tr><td class="label-col">ALT PROJE TÜRÜ</td><td>${p.type}</td></tr>
+          <tr><td class="label-col">ANA ALANI</td><td>${p.field}</td></tr>
+          <tr><td class="label-col">TEMATİK KONUSU</td><td>${p.theme}</td></tr>
+          <tr><td class="label-col">PROJE ADI</td><td>${p.title}</td></tr>
+          <tr><td class="label-col">AMAÇ</td><td>${p.aim}</td></tr>
+          <tr><td class="label-col">YÖNTEM</td><td>${p.method}</td></tr>
+          <tr><td class="label-col">BEKLENEN SONUÇ</td><td>${p.result}</td></tr>
+        </table>
+        <div class="page-num">${idx + 1}</div>
+      `;
+      container.appendChild(page);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mission: Future · Proxima B</title>
+  <meta name="description" content="Oyunlaştırılmış karakter analizi: Proxima B'de koloniyi 100 gün yönet ve PKYS karakter haritanı keşfet.">
+  <meta name="theme-color" content="#070b18">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Başlangıç -->
+  <main id="start" class="start">
+    <div class="start-card">
+      <div class="eyebrow">Yıl 2085 · Nova-X Koloni Gemisi · 13-16 Yaş</div>
+      <h1 class="title">Mission: <span>Future</span></h1>
+      <p class="lead">Test çözmek yok, gezegen kurtarmak var! Proxima B'de koloniyi kur, 4 büyük kriz anını yönet ve 100 günde kendi liderlik & karakter haritanı ortaya çıkar.</p>
+
+      <form id="startForm" novalidate>
+        <div class="field">
+          <label for="studentName">Öğrenci Adı veya Rumuz <small style="color:var(--muted);font-weight:400">(İsteğe bağlı)</small></label>
+          <input id="studentName" class="input" style="text-transform:none;font-family:var(--font);letter-spacing:0" maxlength="32" placeholder="Örn: Can Yılmaz">
+        </div>
+        <div class="field">
+          <label for="code">e-Okul No / Kaptan Kodu</label>
+          <div class="field-row">
+            <input id="code" class="input" name="code" autocomplete="off" spellcheck="false" maxlength="12"
+                   pattern="[A-Za-z0-9\-]{3,12}" placeholder="Örn: 1042 veya NX-4821" aria-describedby="codeHint" required>
+            <button type="button" id="genCode" class="btn">Kod Üret</button>
+          </div>
+          <p id="codeHint" class="hint">🎯 Bu oyunda doğru veya yanlış, kazanan veya kaybeden yok! Sadece senin tercihlerin var.</p>
+        </div>
+        <div class="start-actions">
+          <button type="submit" class="btn btn-primary" id="startBtn">Göreve Başla 🚀</button>
+          <button type="button" class="btn" id="continueBtn" hidden>Kaldığın yerden devam et</button>
+        </div>
+      </form>
+
+      <div class="start-foot">
+        <span id="netStart" class="net">Çevrimiçi</span>
+        <a href="teacher.html">Öğretmen Paneli (Dashboard) →</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Oyun -->
+  <div id="game" class="game" hidden>
+    <header class="hud">
+      <div class="day-badge" aria-live="polite"><span id="dayNum">Gün 1</span> <small>/ 100</small></div>
+      <div class="chapter-pills" id="chapterPills" aria-label="Bölüm ilerlemesi"></div>
+      <ul class="res-list" id="resList" aria-label="Koloni kaynakları"></ul>
+      <button type="button" class="btn btn-sm" id="audioBtn" aria-pressed="true" title="Oyun müziğini aç/kapat (İşitsel duyarlılık)">🔊 Ses: Açık</button>
+      <span id="net" class="net">Çevrimiçi</span>
+    </header>
+
+    <section class="scene-wrap" aria-label="Koloni görünümü">
+      <canvas id="scene" aria-hidden="true"></canvas>
+      <p class="scene-caption" id="caption" aria-live="polite">Nova-X Proxima B yörüngesinde. İniş alanı seçiliyor…</p>
+    </section>
+
+    <nav class="bar" aria-label="Gün kontrolleri">
+      <button type="button" class="btn btn-primary" id="endDay">Günü Bitir ☾</button>
+      <button type="button" class="btn" id="ffBtn">Sonraki Kriz Anına İlerle ⏩</button>
+      <span class="spacer"></span>
+      <button type="button" class="btn btn-ghost" id="saveExit">Kaydet ve Çık</button>
+    </nav>
+
+    <aside class="side">
+      <section>
+        <h2>Koloni Modülleri İnşa Et</h2>
+        <div class="build-grid" id="buildGrid"></div>
+      </section>
+      <section>
+        <h2 id="rationLabel">Erzak & Rasyon Politikası</h2>
+        <div class="seg" role="radiogroup" aria-labelledby="rationLabel" id="rationSeg">
+          <input type="radio" name="ration" id="r-low" value="low"><label for="r-low">Tasarruflu</label>
+          <input type="radio" name="ration" id="r-normal" value="normal" checked><label for="r-normal">Dengeli</label>
+          <input type="radio" name="ration" id="r-high" value="high"><label for="r-high">Cömert</label>
+        </div>
+      </section>
+      <section>
+        <h2>Mürettebat Danışmanları</h2>
+        <ul class="crew" id="crewList"></ul>
+      </section>
+      <section>
+        <h2>Kaptan Seyir Defteri</h2>
+        <ul class="log" id="log" aria-live="polite"></ul>
+      </section>
+    </aside>
+  </div>
+
+  <!-- Olay penceresi -->
+  <dialog id="dlg" aria-labelledby="dlgTitle">
+    <div class="dlg">
+      <div class="dlg-head">
+        <div class="eyebrow" id="dlgEyebrow"></div>
+        <h2 id="dlgTitle"></h2>
+      </div>
+      <div class="dlg-body" id="dlgBody"></div>
+    </div>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/tracker.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/scenarios.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

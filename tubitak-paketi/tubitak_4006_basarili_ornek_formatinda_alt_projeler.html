@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>TÜBİTAK 4006 Başarılı Alt Proje Örnekleri Formatında Hazır Alt Proje Tabloları</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm;
+    }
+    * {
+      box-sizing: border-box;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f3e8ff;
+      color: #000;
+      font-size: 11.5pt;
+      line-height: 1.38;
+    }
+    .no-print {
+      max-width: 210mm;
+      margin: 0 auto 16px auto;
+      background: #4c1d95;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 10pt;
+    }
+    .no-print button {
+      background: #f59e0b;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 24px auto;
+      background: white;
+      padding: 15mm;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      page-break-after: always;
+    }
+    table.tubitak-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px solid #581c87;
+    }
+    table.tubitak-table td {
+      border: 1.5px solid #581c87;
+      padding: 9px 12px;
+      vertical-align: middle;
+      text-align: justify;
+    }
+    table.tubitak-table td.label-col {
+      width: 26%;
+      font-weight: bold;
+      text-align: left;
+      text-transform: uppercase;
+      background: #faf5ff;
+    }
+    .page-num {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 10pt;
+      color: #475569;
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .no-print { display: none; }
+      .page { width: 100%; min-height: auto; margin: 0; padding: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <div>
+      <strong>📘 TÜBİTAK "Başarılı Alt Proje Örnekleri" Birebir Tablo Formatı:</strong> Tablo üzerindeki tüm alanlara tıklayarak öğrenci/danışman isimlerini düzenleyebilir ve doğrudan yazdırabilirsiniz.
+    </div>
+    <button onclick="window.print()">🖨️ Yazdır / PDF Kaydet (Ctrl+P)</button>
+  </div>
+
+  <!-- SAYFA 1: PROJE 1 — MISSION: FUTURE (TASARIM / STEAM) -->
+  <div class="page" contenteditable="true">
+    <table class="tubitak-table">
+      <tr>
+        <td class="label-col">ÖĞRENCİ</td>
+        <td>[Öğrenci 1 Adı Soyadı]<br>[Öğrenci 2 Adı Soyadı]</td>
+      </tr>
+      <tr>
+        <td class="label-col">DANIŞMAN</td>
+        <td>[Rehber Öğretmen Adı Soyadı]</td>
+      </tr>
+      <tr>
+        <td class="label-col">ALT PROJE TÜRÜ</td>
+        <td>Tasarım</td>
+      </tr>
+      <tr>
+        <td class="label-col">ANA ALANI</td>
+        <td>Yazılım / Psikoloji</td>
+      </tr>
+      <tr>
+        <td class="label-col">TEMATİK KONUSU</td>
+        <td>STEAM (Fen, Teknoloji, Mühendislik, Sanat ve Matematik)</td>
+      </tr>
+      <tr>
+        <td class="label-col">PROJE ADI</td>
+        <td>Gelecek Görevi (Mission Future): Gölge Veri Tabanlı Oyunlaştırılmış Karakter ve STEAM Kariyer Analizi Simülasyonu</td>
+      </tr>
+      <tr>
+        <td class="label-col">AMAÇ</td>
+        <td>Geleneksel kağıt-kalem kariyer envanterlerinde öğrenciler doğru ve beğenilen cevabı tahmin ederek işaretlediği için sosyal beğenirlik yanlılığı oluşmaktadır. Projemizin amacı, öğrencilerin kriz anındaki mikro-davranışlarını (gölge veri) analiz ederek problem çözme stillerini, karakter arketiplerini ve STEAM kariyer yönelimlerini belirleyen oyunlaştırılmış bir web simülasyonu ve öğretmen analiz paneli tasarlamaktır.</td>
+      </tr>
+      <tr>
+        <td class="label-col">YÖNTEM</td>
+        <td><strong>Problemi araştırma:</strong> Projemize başlamadan önce okullarda kullanılan klasik mesleki yönelim envanterlerinin sınırlılıklarını ve örtük değerlendirme (stealth assessment) çalışmalarını araştıracağız. <strong>Gereksinimleri belirleme:</strong> Okullardaki akıllı tahta ve bilgisayarlarda kurulum ve internet gerektirmeden (çevrimdışı) çalışabilecek, KVKK uyumlu anonim bir web simülasyonu gereksinimlerini belirleyeceğiz. <strong>Olası çözümleri geliştirme:</strong> Fen (ekosistem dengesi), teknoloji (veri analitiği), mühendislik (reaktör devre tamiri), sanat (arayüz ve hikâye kurgusu) ve matematik (kaynak optimizasyonu ve olasılık) disiplinlerini içeren senaryo alternatifleri geliştirilecektir. <strong>En iyi çözümü seçme:</strong> Öğrencinin sadece hangi şıkkı seçtiğini değil, karara nasıl vardığını (tereddüt süresi, seçenekler arası gezinme, teknik kılavuz okuma süresi ve geri alma sayısı) ölçen 100 günlük "Proxima B Koloni Simülasyonu" kurgusuna karar verilecektir. <strong>Prototip oluşturma/yapılandırma:</strong> HTML5, CSS ve JavaScript kullanılarak öğrenci oyun ekranı (<code>index.html</code>) ve rehber öğretmen için 6 boyutlu SVG radar grafiği, 7 karakter arketipi ve 3 harfli Holland (RIASEC) meslek eşleştirmesi üreten öğretmen paneli (<code>teacher.html</code>) kodlanacaktır. <strong>Çözümleri test etme ve değerlendirme:</strong> Hazırladığımız prototipi okulumuzdaki gönüllü öğrencilerle test ederek klasik kağıt-kalem testi sonuçlarıyla karşılaştıracağız ve ölçümlerin doğruluğunu değerlendireceğiz.</td>
+      </tr>
+      <tr>
+        <td class="label-col">BEKLENEN SONUÇ</td>
+        <td>Bir web simülasyonu üzerinde gerçekleştirilecek tasarımımız sayesinde öğrenciler sıkıcı optik formlar doldurmak yerine bir uzay kolonisini yönetirken gerçek karar verme, stres yönetimi ve analitik düşünme becerilerini sergileyecektir. Klasik testlerde gizlenen sabırsızlık, deneme-yanılma eğilimi veya mükemmeliyetçilik gibi davranış örüntüleri gölge veri motoruyla objektif biçimde tespit edilecektir. Düşük donanımlı cihazlarda ve internetsiz ortamlarda dahi çalışabilen bu özgün yazılımın tüm okul rehberlik servislerinde kullanılarak öğrencilerin 21. yüzyıl STEAM ve geleceğin mesleklerine yönelik kariyer farkındalıklarını artırması hedeflenmektedir.</td>
+      </tr>
+    </table>
+    <div class="page-num">1</div>
+  </div>
+
+  <!-- SAYFA 2: PROJE 2 — OKUL DIŞI ÖĞRENME ORTAMLARI (ARAŞTIRMA / PDR) -->
+  <div class="page" contenteditable="true">
+    <table class="tubitak-table">
+      <tr>
+        <td class="label-col">ÖĞRENCİ</td>
+        <td>[Öğrenci 1 Adı Soyadı]<br>[Öğrenci 2 Adı Soyadı]</td>
+      </tr>
+      <tr>
+        <td class="label-col">DANIŞMAN</td>
+        <td>[Rehber Öğretmen Adı Soyadı]</td>
+      </tr>
+      <tr>
+        <td class="label-col">ALT PROJE TÜRÜ</td>
+        <td>Araştırma</td>
+      </tr>
+      <tr>
+        <td class="label-col">ANA ALANI</td>
+        <td>Sosyoloji / Psikoloji</td>
+      </tr>
+      <tr>
+        <td class="label-col">TEMATİK KONUSU</td>
+        <td>Okul Dışı Öğrenme Ortamları</td>
+      </tr>
+      <tr>
+        <td class="label-col">PROJE ADI</td>
+        <td>Okul Dışı Öğrenme Ortamı Olarak Üniversite Kampüs Gezilerinin Lise Öğrencilerinin Kariyer Kararlılığı ve Akademik Motivasyonuna Etkisi</td>
+      </tr>
+      <tr>
+        <td class="label-col">AMAÇ</td>
+        <td>Lise öğrencilerinin meslek ve üniversite tercih sürecinde yaşadıkları kararsızlığın önemli bir nedeni, yükseköğretim ortamlarını yalnızca soyut puan tabloları üzerinden tanımalarıdır. Bu araştırmada okul dışı öğrenme ortamı olarak düzenlenen yapılandırılmış üniversite kampüs ve fakülte gezilerinin öğrencilerin kariyer kararlılığı, hedef netliği ve sınava çalışma motivasyonu üzerindeki etkisini belirlemek amaçlanmıştır.</td>
+      </tr>
+      <tr>
+        <td class="label-col">YÖNTEM</td>
+        <td>Projede "Okul dışı öğrenme ortamı olarak üniversite kampüs gezileri öğrencilerin kariyer kararsızlığını azaltır ve akademik motivasyonunu artırır mı?" sorusu üzerinden hareket edildi. Konu ile ilgili alanyazın taraması yapılarak "Yapılandırılmış kampüs gözlemi kariyer kararlılığını olumlu etkiler." hipotezi oluşturuldu. Araştırma nicel araştırma yöntemlerinden ön test-son test yarı deneysel desen ile yürütülecektir. Çalışma grubunu okulumuzdan üniversite tanıtım gezisine gönüllü katılan 45 öğrenci oluşturmaktadır. Gezi öncesinde öğrencilere "Kariyer Kararsızlığı ve Akademik Motivasyon Ölçeği" (Ön Test) uygulanacaktır. Okul dışı öğrenme sürecinde öğrencilerin sadece kampüsü gezmesiyle yetinilmeyip, ziyaret edilen fakülte, laboratuvar ve kütüphanelerde akademisyen ve üniversite öğrencileriyle görüşerek "Yapılandırılmış Kampüs Gözlem Formu" doldurmaları sağlanacaktır. Gezi sonrasında aynı ölçek (Son Test) tekrar uygulanacak, ön test ve son test puan ortalamaları elektronik tablolama programında karşılaştırılarak sonuçlar raporlaştırılacaktır.</td>
+      </tr>
+      <tr>
+        <td class="label-col">BEKLENEN SONUÇ</td>
+        <td>Yapılan ön test ve son test ölçümlerinde, üniversite laboratuvarlarını, dersliklerini ve sosyal ortamlarını yerinde deneyimleyen öğrencilerin kariyer kararsızlığı puanlarının anlamlı düzeyde düşmesi, hedefledikleri bölüme yönelik akademik çalışma motivasyonlarının ise yükselmesi beklenmektedir. Özellikle yapılandırılmış gözlem formu kullanan öğrencilerin geziden elde ettikleri mesleki kazanımların daha kalıcı olacağı öngörülmektedir. Araştırma sonuçları doğrultusunda okulumuzda düzenlenecek gelecek geziler için "Bilinçli Üniversite Gezisi Rehberi" hazırlanarak okul dışı öğrenme ortamlarının rehberlik faaliyetlerinde verimli kullanılmasına katkı sağlanacaktır.</td>
+      </tr>
+    </table>
+    <div class="page-num">2</div>
+  </div>
+
+  <!-- SAYFA 3: PROJE 3 — KÜRESEL ISINMA VE İKLİM DEĞİŞİKLİĞİ / ÇEVRE (ARAŞTIRMA VEYA TASARIM / PDR) -->
+  <div class="page" contenteditable="true">
+    <table class="tubitak-table">
+      <tr>
+        <td class="label-col">ÖĞRENCİ</td>
+        <td>[Öğrenci 1 Adı Soyadı]<br>[Öğrenci 2 Adı Soyadı]</td>
+      </tr>
+      <tr>
+        <td class="label-col">DANIŞMAN</td>
+        <td>[Rehber Öğretmen Adı Soyadı]</td>
+      </tr>
+      <tr>
+        <td class="label-col">ALT PROJE TÜRÜ</td>
+        <td>Araştırma</td>
+      </tr>
+      <tr>
+        <td class="label-col">ANA ALANI</td>
+        <td>Psikoloji / Sosyoloji</td>
+      </tr>
+      <tr>
+        <td class="label-col">TEMATİK KONUSU</td>
+        <td>Küresel Isınma ve İklim Değişikliği</td>
+      </tr>
+      <tr>
+        <td class="label-col">PROJE ADI</td>
+        <td>Lise Öğrencilerinde İklim Kaygısı (Eko-Kaygı) Düzeyi ile Sürdürülebilir Çevre Davranışları ve Psikolojik Sağlamlık Arasındaki İlişkinin İncelenmesi</td>
+      </tr>
+      <tr>
+        <td class="label-col">AMAÇ</td>
+        <td>Küresel ısınma, kuraklık ve doğal afet haberlerine yoğun şekilde maruz kalan gençlerde geleceğe yönelik "iklim kaygısı (eko-kaygı)" gelişebilmektedir. Bu araştırmada öğrencilerdeki iklim değişikliği kaygısının düzeyini belirlemek ve bu kaygının çaresizliğe mi yoksa sürdürülebilir çevre koruma davranışlarına (aktif umut ve psikolojik sağlamlığa) mı dönüştüğünü incelemek amaçlanmıştır.</td>
+      </tr>
+      <tr>
+        <td class="label-col">YÖNTEM</td>
+        <td>Araştırma nicel araştırma yöntemlerinden ilişkisel tarama modeli ile yürütülecektir. Çalışma grubunu okulumuzun farklı sınıf düzeylerinde öğrenim gören ve gönüllülük esasına göre seçilen 100 öğrenci oluşturmaktadır. Veri toplama sürecinde alan yazın taraması sonucunda oluşturulan üç bölümlü form kullanılacaktır: Birinci bölümde öğrencilerin günlük su, enerji ve geri dönüşüm alışkanlıklarını sorgulayan "Sürdürülebilir Yaşam Formu", ikinci bölümde "İklim Değişikliği Kaygısı (Eko-Kaygı) Ölçeği" ve üçüncü bölümde "Psikolojik Sağlamlık ve Ekolojik Öz-Yeterlik Ölçeği" yer alacaktır. Rehber öğretmen danışmanlığında toplanan veriler bilgisayar ortamına aktarılarak betimsel istatistikler ve Pearson korelasyon analizi ile değerlendirilecek, iklim kaygısını yapıcı çevre eylemine dönüştüren faktörler grafik ve tablolarla ortaya konulacaktır.</td>
+      </tr>
+      <tr>
+        <td class="label-col">BEKLENEN SONUÇ</td>
+        <td>Araştırma sonucunda, iklim değişikliği konusunda yalnızca olumsuz haberlere maruz kalan ancak somut çözüm becerisi bilmeyen öğrencilerde eko-kaygı puanlarının yüksek çıkması; buna karşın günlük yaşamında su tasarrufu, sıfır atık ve ağaçlandırma gibi somut sürdürülebilir davranışlar sergileyen öğrencilerde ekolojik öz-yeterlik ve psikolojik sağlamlığın daha yüksek olması beklenmektedir. Elde edilen bulgularla öğrencilerin iklim kaygısını "ekolojik sorumluluk ve aktif umuda" dönüştürmelerini destekleyen "Yeşil Psikolojik Sağlamlık Rehberi" hazırlanarak fuar alanında tüm ziyaretçilerle paylaşılacaktır.</td>
+      </tr>
+    </table>
+    <div class="page-num">3</div>
+  </div>
+
+</body>
+</html>

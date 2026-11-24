@@ -1,0 +1,18 @@
+{
+  "name": "Mission: Future — Proxima B",
+  "short_name": "Mission: Future",
+  "description": "Oyunlaştırılmış karakter analizi: Proxima B'de koloniyi 100 gün hayatta tut.",
+  "lang": "tr",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#070b18",
+  "theme_color": "#070b18",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

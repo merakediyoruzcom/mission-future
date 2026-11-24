@@ -1,0 +1,13 @@
+Rumuz;Sinif;Kagit_Test_Beyani_Kilavuz_Okuma;Golge_Veri_Gercegi;Ort_Tereddut_Ms;Hover_Gecisi;Geri_Alma_Undo;Analitik_Puan;Risk_Puan;Sosyal_Puan;Surdurulebilir_Puan;Esneklik_Puan;Stres_Puan;Cikan_Arketip;Holland_RIASEC_Kodu;Profil_Dogruluk_1_5;Oyun_Memnuniyet_1_5
+NX-4821;10;Evet (5/5);Atladı (Skipped);1850;1,2;1;34;72;52;48;76;68;Hızlı Aksiyoncu;REA;5;5
+NX-7390;11;Evet (5/5);Tam Okudu (14sn);9400;2,1;2;86;45;58;74;62;79;Stratejist;IRC;5;5
+NX-1904;9;Evet (4/5);Atladı (Deneme-Yanılma);2100;1,5;0;31;78;49;44;81;64;Hızlı Aksiyoncu;RAE;5;5
+NX-6251;12;Kararsız (3/5);Tam Okudu + 9 Undo;11200;4,6;9;82;32;51;69;18;46;Mükemmeliyetçi;CIR;5;4
+NX-3382;10;Evet (5/5);Mürettebata Danıştı;6200;2,4;2;61;48;88;66;65;70;Bağ Kurucu;SEA;4;5
+NX-8419;11;Evet (4/5);Stok Biriktirdi (%84);7100;1,9;1;68;29;62;91;58;74;Sürdürülebilir;CRS;5;5
+NX-5027;9;Evet (5/5);Atladı (Skipped);1950;1,1;0;54;89;46;42;75;66;Kâşif;IRA;4;5
+NX-9164;12;Evet (4/5);Savunma Öncelikli;6800;2,8;3;64;22;59;78;49;72;Koruyucu;CSI;5;5
+NX-2745;10;Evet (5/5);Atladı (Deneme-Yanılma);2300;1,4;1;36;74;55;45;79;69;Hızlı Aksiyoncu;RES;5;5
+NX-6618;11;Evet (5/5);Tam Okudu + Veri Talebi;8900;2,0;2;88;49;54;76;60;81;Stratejist;ICR;5;5
+NX-3910;10;Evet (4/5);Atladı + Meteor Timeout;4500;3,9;5;48;25;61;70;41;35;Koruyucu;CSE;4;4
+NX-8052;12;Hayır (2/5);Keşif & Yüksek Risk;3400;1,6;1;62;86;50;47;77;71;Kâşif;IAR;5;5
